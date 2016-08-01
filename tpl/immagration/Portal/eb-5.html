@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0025)http://www.immi.cn/about/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit">     
+    <title>{$post_title} {$site_name}</title>
+    <meta name="keywords" content="{$post_keywords}">
+    <meta name="description" content="{$post_excerpt}">
+    <link href="__TMPL__Public/css/page_about_us.css" rel="stylesheet" type="text/css">
+
+    <!--<base target="_blank">-->
+    <base href="." target="_blank">
+    <script type="text/javascript" src="__TMPL__Public/js/_l.js" id="_lxb_jsonp_igthykpg_" charset="utf-8"></script>
+</head>
+
+<body>
+<!--头部开始-->
+<tc_include file="Public:head" />
+<!--头部结束-->
+
+<div class="contents ">
+
+    <div class="leftnav">
+        <ul>
+        <foreach name="eb5navs" item="vo">
+            <li><a href="{$vo.href}" class="ac" class="hover">{$vo.label}</a></li>
+        </foreach>       
+        </ul>
+    </div>
+    <!--显示页面内容-->
+    <div class="rightcons" id="zg_DV1" style="display:block">
+        <h4 class="rightconsbt1"><i></i>{$post_title}</h4>           
+            {$post_content}
+    </div>            
+</div>
+
+
+<!--导航样式-->    
+<script type="text/javascript">
+    $(".ac").each(function(){
+        if($(this)[0].href == String(window.location) && $(this).attr('href')!=""){
+            $(this).parents("li").addClass("hover");
+        }
+    });
+</script>
+
+<!--底部开始-->
+﻿<tc_include file="Public:footer" />
+
+</body>
+</html><!DOCTYPE html>
+

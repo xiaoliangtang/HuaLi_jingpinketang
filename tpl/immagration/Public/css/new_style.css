@@ -1,0 +1,100 @@
+
+/*头部代码开始*/
+#top{ width:973px; height:94px; margin:0px auto; position:relative;}
+#top .logo{ margin-top:18px; margin-left:40px;}
+#top dl{ position:absolute;top:31px;left:300px;_top:42px;+top:42px;}
+#top dt{line-height:20px;}
+#top dd{ margin:0px;}
+h1,h2,h3,h4,h5,h6{ font-size:12px; font-weight:normal;margin:0px; padding:0px;}
+.clear{ clear:both;}
+#top h2{ position:absolute; width:225px; height:21px; line-height:21px; top:40px;_top:45px;+top:45px; right:32px; background:url(../images/phone.png) no-repeat right 0px;}
+#top .topd{ position:absolute;top:0px;right:38px; width:228px; height:22px; background:url(../images/topd.png) no-repeat;}
+#top .topd ul{ margin:0px; margin-left:-25px;}
+#top .topd li{ float:left; list-style:none; line-height:22px; margin-right:6px;background: url(../images/topd.jpg) no-repeat center left; padding-left:9px; width:50px; text-align:center;_margin-left:10px;+margin-left:10px;}
+/*导航代码开始*/
+#menu1{width:100%;height:34px;background:url(../images/topbg1.gif);}
+#menu1 ul{ width:973px; height:34px; margin:0px auto; padding:0px;}/*在ul标签下设置边距为0并适合各个浏览器*/
+#menu1 ul li{ width:105px; height:34px; line-height:34px; float:left; text-align:center; list-style:none;background:url(../images/topxx.gif) no-repeat right;}
+#menu1 ul li a{ font-size:14px; color:#FFF; display:block; width:105px; height:34px;}
+#menu1 ul li a:link,#menu1 ul li a:visited,#menu1 ul li a:active{ font-size:14px; color:#FFF; text-decoration:none;}
+#menu1 ul li a:hover{ font-weight:bold; text-decoration:none; background:url(../images/gggg.gif) no-repeat;}
+#menu1 .no{ background:none;}
+#menu1 #x{width:106px; height:34px; font-weight:bold; background: url(../images/ggggxgif.gif) no-repeat;}
+/*导航小代码开始*/
+#menu2{width:100%;height:21px;background:url(../images/topbg2.gif);}
+#menu2 ul{ width:973px; height:21px; margin:0px auto; padding:0px;}
+#menu2 ul li{ width:105px; float:left; font-size:12px; color:#FFF; text-align:center; list-style:none; line-height:21px;}
+/*广告切换代码开始*/
+#gg{ width:973px; height:225px; margin:0px auto; margin-top:15px;}
+#gg .gg_left{ width:712px; height:225px; float:left;}
+.gg_right{ width:248px; height:223px; float:right;border:#DFE3E5 1px solid;}
+.phone{ margin:13px 13px 8px 13px;}
+.gg_right ul{ padding:0px; margin:0px 0px 0px 25px;}
+.gg_right ul li{ list-style:none; background:url(../images/xx.gif) no-repeat left 5px; padding-left:20px; line-height:30px;}
+.qq{ margin-left:15px;}
+/*服务项目行代码开始*/
+#fwxm{ width:971px; height:109px;border:#DFE3E5 1px solid; margin:0px auto; margin-top:15px;}
+#fwxm dl{ margin:0px; padding:0px; float:left; width:220px;_width:218px; margin:11px 0px 11px 13px;background:url(../images/service_line.gif) no-repeat right; padding-right:8px;}
+#fwxm dl dt{ font-weight:bold;}
+#fwxm dl dt span{ font-weight:normal;}
+#fwxm dl dd{ line-height:20px;margin:0px; padding:0px; margin-top:10px;}
+#fwxm .nobg{ background:none;}*/*/
+/*图片滚动行代码开始*/
+#gd{ width:971px; height:210px; margin:0px auto;border:#DFE3E5 1px solid; margin-top:15px;}
+#texttp {float:left;width:208px;background-color:#e2e5e7; border-top:3px #CCCCCC solid; float:left;}
+#tp{line-height:30px;+line-height:25px;_line-height:25px;}
+a.sm:link {color: #FF0000;text-decoration: none;}
+a.sm:hover {color: #000000;text-decoration: none;}
+/*关于胜美行代码开始*/
+#about{ width:973px; height:188px; margin:0px auto; margin-top:15px;}
+#about .ab_left{border:#DFE3E5 1px solid; float:left; width:705px; height:186px;}
+.aboutls{ width:703px; height:184px; float:left}
+.aboutls dt{ float:left; width:271px; height:180px; margin-left:3px; margin-top:3px; display:inline}
+.aboutls dd{ float:left; width:380px; line-height:20px; margin-left:20px;}
+.aboutls dd h2,.aboutls dd h3{ font-size:13px;font-weight:bold;+margin:11px 0px;_margin:11px 0px; padding:0px;}
+.aboutls .titlea{ margin-top:15px; display:inline; _margin-top:0px; +margin-top:0px}
+.aboutls .titleb{ color:#FF0000}
+.aboutls .titleb span{ margin:0px 5px;}
+.ab_right{width:250px; height:186px;border:#DFE3E5 1px solid; float:right;}
+.ab_right h2{height:29px; background:url(../images/bgg.gif) repeat-x; line-height:29px; padding-left:15px; margin:0px; font-weight:bold; border-bottom:#DFE3E5 1px solid;}
+.ab_right span{font-weight:normal;}
+.ab_right ul{ margin:0px; padding:0px; margin-left:15px; margin-top:10px;_margin-top:12px;}
+.ab_right ul li{ list-style:none; margin-bottom:15px;+margin-bottom:10px;_margin-bottom:10px;background:url(../images/xxxx.gif) no-repeat left 5px; padding-left:15px;}
+/*建站知识行代码开始*/
+#jz{ width:973px;height:245px;border:#DFE3E5 1px solid; margin:0px auto; margin-top:15px;}
+#jz dl{background:url(../images/xxxxxx.gif) no-repeat right; width:229px; height:220px; margin:10px 0px 10px 14px; _margin-left:10px;float:left; }
+#jz dl dt{ margin:0px; padding:0px; font-weight:bold;}
+#jz dl dt img{ margin:10px 0px;}
+#jz dl dt span{ font-weight:normal;}
+#jz dl dd{ padding-left:15px;background:url(../images/xxxxx.gif) no-repeat left 9px; line-height:25px; list-style:none; margin:0px;}
+
+#jz .nobj{ background:none;}
+/*友情链接代码开始*/
+#yqlj{ width:973px;height:88px;margin:0px auto;border:#DFE3E5 1px solid; margin-top:15px;}
+#yqlj .tp{ height:53px;background:url(../images/link_bg.gif) repeat-x;border-bottom:#DFE3E5 1px solid;}
+#yqlj .tp img{ margin-left:15px; margin-right:5px;}
+#yqlj dl{ margin:0px; padding:0px; margin-left:10px;}
+#yqlj dl dt{ font-weight:bold; float:left;padding:0px; margin-top:8px;}
+#yqlj dl dd{ float:left;margin-left:15px; margin-right:6px; margin-top:10px;}
+/*尾部代码开始*/
+#down{ width:100%; height:30px;background:url(../images/down.gif) repeat-x; margin-top:15px;}
+#down .ft{ width:973px; margin:0px auto; color:#FFF; background:url(../images/jt.gif) no-repeat left; padding-left:15px; line-height:30px;}
+#downb{ width:970px; height:120px; margin:0px auto; position:relative;}
+#downb .img1{ margin-top:20px;}
+#downb ul{ position:absolute; top:36px; left:200px;}
+#downb ul li{ list-style:none; line-height:20px;}
+#downb .img2{ position:absolute; top:30px; right:60px;}
+.ft a:link,.ft a:visited,.ft a:active{ color:#FFFFFF}
+.ft a:hover{ color:#FF0000}
+/*站长知识*/
+.web_left{ width:250px; height:auto!important; overflow:hidden;float:left;}
+.web_a{ width:248px; height:auto!important; overflow:hidden; border:#dfe3e5 solid 1px;}
+.web_titlea{ width:233px; height:43px; background:url(../images/weba.gif) no-repeat; border-bottom:#dfe3e5 solid 1px; font-size:15px; line-height:43px; font-weight:bold; padding-left:15px;}
+.web_menu{ margin:12px 0px 12px 15px}
+.web_menu li{ list-style:none; margin-bottom:5px;}
+.web_menu li a:link,.web_menu li a:visited,.web_menu li a:active{ width:161px; height:31px; background:url(../images/webmenub.gif) no-repeat; line-height:31px; display:block; padding-left:50px; font-size:13px;}
+#webbg{ background:url(../images/webmenua.gif) no-repeat; color:#FFFFFF; font-weight:bold}
+.web_menu li a:hover{ background:url(../images/webmenua.gif) no-repeat; color:#FFFFFF; font-weight:bold}
+.web_titleb{ width:235px; height:32px; line-height:32px; padding-left:15px; font-size:13px; font-weight:bold; border-bottom:#dfe3e5 1px solid;background:url(../images/bgg.gif) repeat-x bottom;}
+.web_rm{ margin:8px 0px 8px 15px}
+.web_rm li{ list-style:none; line-height:24px; background:url(../images/xxxx.gif) no-repeat 0px 8px; padding-left:16px; color:#999999}

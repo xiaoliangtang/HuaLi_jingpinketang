@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0023)http://www.immi.cn/usa/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit"> 
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}">
+    <meta name="description" content="{$seo_description}">
+    <link href="__TMPL__Public/css/category_usa.css" rel="stylesheet" type="text/css">
+    <!--<base target="_blank">-->
+    <base href="." target="_blank">
+    <link rel="stylesheet" href="__TMPL__Public/css/1001.css" type="text/css" charset="utf-8">
+</head>
+
+<body>
+<!--头部开始-->
+<tc_include file="Public:head" />
+<!--头部结束-->
+
+<!--栏目导航开始-->
+    <div class="wrap w1024">
+	<div class="sec_nav">
+    	<div class="left1">
+        	<h1>美国移民</h1>
+            <p>US Immigration</p>
+        </div>
+        <div class="right">
+        	<ul>
+    
+            </ul>
+        </div>
+    </div>
+<!--栏目导航结束-->
+     
+
+
+<div class="usa_top">
+   
+<!--幻灯片-->  	
+<!--banner-->
+    <div class="banner-wrap1">
+    		<div class="banner" id="banner">
+
+                <div class="banner_show" id="banner_show">
+                    
+                    <!-- $theme_config['model1_slide']实现动态修改幻灯片的标识 -->
+                    <php>
+                    $ymzx_slides=sp_getslide($theme_config['model4_usymslide']);
+                    </php>
+
+                    <foreach name="ymzx_slides" item="vo">
+                        <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" title="{$vo.slide_name}" _link="{$vo.slide_url}" width="604" height="290" alt="{$vo.slide_name}">
+                    </foreach>
+                   
+                </div>
+                <div class="banner_title_bg"></div>
+                <div class="banner_title" id="banner_title">
+                    <!-- 标题显示 -->
+                    <h5><a href="" title=""></a></h5>
+                    <!-- 显示图片轮播进度小圆点 -->
+                    <ul>
+                    <foreach name="ymzx_slides" item="vo">
+                        <li class=""></li>
+                    </foreach>
+                    </ul>
+                </div>
+            
+            <div></div>
+        	<div class="banner_btnl" id="banner_btnl"></div>
+        	<div class="banner_btnr" id="banner_btnr"></div>    
+        </div>
+    </div>
+
+
+<div class="zho">
+    <!--文章列表页-->
+        <php>
+            $lists = sp_sql_posts_paged("cid:$cat_id;where:recommended=1 || istop=1;order:post_date DESC;",1);
+        </php>
+        <volist name="lists['posts']" id="vo">
+            <php>
+            $smeta=json_decode($vo['smeta'], true);
+            </php>
+            <if condition="!empty($lists['posts'])">
+    			<h3><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_title}</a></h3>
+    			<p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_excerpt}</a></p>
+            </if>
+        </volist>
+										          	
+			
+			<ul>
+                <php>
+                    $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",5);
+                </php>
+                <volist name="lists['posts']" id="vo">
+                    <php>
+                    $smeta=json_decode($vo['smeta'], true);
+                    </php>
+		    	     <li>
+                        <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}"><i></i>{$vo.post_title}</a>
+                    </li>
+                 </volist>                                            
+		    </ul>
+</div>
+</div>
+
+
+<!--移民流程-->
+	<div class="liucheng ">
+			<div class="lleft">
+				<b>移民<br>流程</b>
+			</div>
+			<div class="rright">
+				<ul>
+					<li><a>资金<br>账户</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a>准备<br>材料</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a>递交<br>申请表</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a>移民局<br>批准</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a>领事<br>馆面试</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a style="line-height: 38px;">登陆</a>
+					</li>
+					<li class="wu">----</li>
+					<li><a>登陆<br>安家</a>
+					</li>
+				</ul>
+			</div>
+		</div>	
+
+
+<!--EB-5投资项目-->
+<div class="rx w1024">
+    <div class="gwbt" style="margin-bottom:10px;">
+        <strong style="margin-bottom:10px;"><span class="red">EB-5投资</span>项目</strong>
+        <a href="{$eb5url}">more</a>
+    </div>
+    <div class="cen">
+    	 <div class="example">
+         <img src="__TMPL__Public/images/usa_1.jpg" width="364" height="250" title="EB-5投资" alt="EB-5投资">
+		
+        </div>
+        <div class="tiaojian">
+           	<h3>移民条件： <a href="{$eb5url}">更多</a></h3>
+            <ul class="lf">  	
+        		<li><i></i>申请人需年满18周岁，申请排期2年；</li>
+        		<li><i></i>通过官方文件，证明资金的合法来源；</li>
+        		<li><i></i>证明申请人有足够的资金（可包括配偶的资产，继承、赠与、博彩也被认可）；</li>
+        		<li><i></i>应有相关部门的健康和无犯罪记录的证明。</li>	    	
+            </ul>
+        </div>
+        <div class="tiaojian">
+        <h3>申请流程：<a href="{$eb5url}">更多</a></h3>
+         <ul class="lf">    	
+            <li><i></i>认购项目</li>
+        	<li><i></i>存入投资款到监管账户</li>
+        	<li><i></i>律师递交I-526移民申请表</li>
+        	<li><i></i>美国移民局批准I-526</li>
+        	<li><i></i>广州领事馆面试或免面试——登录（得到签证后的180天内）</li>
+            <li><i></i>由一般合伙人监督并向移民局报告进度</li>
+            <li><i></i>由律师向移民局提出I-829申请取消签证条件</li>
+            <li><i></i>投资人可申请成为美国公民</li>
+        </ul>
+        </div>  
+    </div>
+</div>	
+
+
+<p style="height:95px"></p>
+
+
+<div class="rx w1024">
+
+    <div class="cen">
+         <div class="example">
+         <img src="__TMPL__Public/images/usa_2.jpg" width="364" height="250" title="EB-5投资" alt="EB-5投资">
+        
+        </div>
+        <div class="tiaojian">
+            <h3>项目优势： <a href="{$eb5url}">更多</a></h3>
+            <ul class="lf">     
+                <li><i></i>申请条件宽松：无年龄、经商、学历、英语能力等要求；</li>
+                <li><i></i>快捷：约12-15个月办成，是获得美国永久移民身份的最快方式；</li>
+                <li><i></i>无移民监：申请人只需每半年入境美国一次，便可维持绿卡的有效性；</li>
+                <li><i></i>材料准备简单、快捷；</li>  
+
+                <li><i></i>子女免费就读美国公立名校；</li>
+                <li><i></i>可自由选择居住地；</li>
+                <li><i></i>投资50万美元，5年期满返还本金；</li>          
+            </ul>
+        </div>
+        <div class="tiaojian">
+        <h3>优质项目推荐：<a href="{$eb5url}">更多</a></h3>
+         <ul class="lf">        
+            <li><i></i>New Empire Development LLC 新帝国</li>
+            <li><i></i>Thompson B EB-5 Manager, LLC.汤姆森教育中心项目</li>
+            <li><i></i>Lam’s American Dream美国林氏酒店投资项目</li>
+        </ul>
+        </div>  
+    </div>
+</div>
+
+
+<!--L1投资项目-->
+
+<!--banner广告条-->
+<p style="height:80px"></p>
+
+<!--专家团队-->
+<div class="zj w1024">
+
+    <div class="gwbt" style="margin-bottom:10px; border: none;">
+        <strong style="margin-bottom:10px;"><span class="red">移民</span>专家团队</strong>
+        <a href="{$teamurl}">more</a>
+    </div>
+   
+ <div class="vod">
+	<div id="move_vod">
+		<div id="movecon_vod">
+			<div style="width: 4420px; left: -2040px;">
+			    <!--专家团队列表-->
+                <php>
+                    $lists = sp_sql_posts_paged("cid:$team_id;order:post_date DESC;");
+                </php>
+                <volist name="lists['posts']" id="vo">
+                    <php>
+                    $smeta=json_decode($vo['smeta'], true);
+                    </php>
+
+                    <dl>					
+					<dt>
+                        <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank" title="{$vo.post_title}">
+                        <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" height="233" width="167" title="{$vo.post_title}" alt="{$vo.post_title}">
+                        </a>
+                    </dt>  
+					<dd><span><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank" title=" Mia">&nbsp;{$vo.post_title}</a></span>{$vo.post_keywords}
+					</dd>
+					</dl>
+				</volist>														
+			</div>
+		</div>
+
+	</div>
+</div>
+
+    </div>
+    </div>
+   
+
+<!--底部开始-->
+﻿<tc_include file="Public:footer" />
+<!--底部结束-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7f31ed826facf8a5472b3aef79fc7e44";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript" src="__TMPL__Public/js/jquery.luara.0.0.1.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/js/special.js"></script>
+<!--精英团队--> 
+<script language="javascript" type="text/javascript"> 
+         var hsp = new HScrollPanel(); 
+         hsp.width = 450; 
+         hsp.delay = 30; 
+         hsp.Bind("divHScroll"); 
+      </script>
+  <script type="text/javascript">
+   
+    var oMovevod=document.getElementById('movecon_vod');
+    var oDivod=oMovevod.getElementsByTagName('div')[0];
+    var aDlvod=oMovevod.getElementsByTagName('dl');
+    var timer=null;
+    var iNum=0;
+    
+    oDivod.innerHTML+=oDivod.innerHTML;
+    var iW=aDlvod[0].offsetWidth*aDlvod.length;
+    var iWidth=aDlvod[0].offsetWidth;
+    oDivod.style.width=iW+'px';
+    
+    function doMovevod(){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            var iLeft=oDivod.offsetLeft-5;
+            
+            if(iLeft<=-iW/2){
+                iLeft=0;
+            }
+            
+            if(iLeft%iWidth==0&&iLeft!=0){
+                clearInterval(timer);
+                iNum++;
+                
+                setTimeout(doMovevod,2000);     
+            }
+            
+            oDivod.style.left=iLeft+'px';
+        },100); 
+    }
+    doMovevod();
+    oMovevod.onmouseover=function(){
+        clearInterval(timer);   
+    };  
+    
+    oMovevod.onmouseout=function(){
+        doMovevod();
+    };  
+  </script> 
+</body>
+</html><!DOCTYPE html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0024)http://www.immi.cn/team/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit"> 
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}">
+    <meta name="description" content="{$seo_description}">
+    <link href="__TMPL__Public/css/list_team.css" rel="stylesheet" type="text/css">
+    <link href="__TMPL__Public/css/page_about_us.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__TMPL__Public/js/jquery.min.js"></script>
+
+    <link href="__TMPL__Public/css/new_style.css" rel="stylesheet" type="text/css">
+    <link href="__TMPL__Public/css/new_stylex.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- 头部开始 -->
+<tc_include file="Public:head" />
+<!-- 头部结束 -->
+
+<div style="height:25px"></div>
+
+<!-- 中间部分 -->
+<div id="main">
+      <div id="main_left" style="margin-bottom:50px">
+      <div class="a">
+                 <h1>新闻资讯 <span>WHAT NEWS</span></h1>
+                 <h2><span>{$site_name} </span>-专业为你提供移民资讯！</h2>
+           </div>
+           <div class="b"></div>           
+  
+         
+        <!--文章列表页-->
+        <php>
+            $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
+        </php>
+        <volist name="lists['posts']" id="vo">
+            <php>
+            $smeta=json_decode($vo['smeta'], true);
+            </php>
+        <div class="xw">
+               <div class="xwaa"></div>
+               <dl class="xwb">
+                 <dt><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank"> {$vo.post_title|msubstr=0,38}</a></dt>
+                 <dd> &nbsp;{:msubstr($vo['post_excerpt'],0,145)}<a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank"><font color="#FF0000">&gt;&gt;查看详细!</font></a>
+                 </dd>
+               </dl><!--xwb end-->
+        </div> <!--xw end-->
+        </volist>
+
+        <div class="clear"></div>
+         
+         
+        <!--分页显示-->
+        <div id="pages" class="text-c">
+            <a class="a1" target="_self">{$lists['count']}条</a> 
+
+            {$lists['page']}
+        </div> 
+
+  </div><!--main_left end-->
+
+      <div id="main_right">
+           <div class="b">
+                 <h2>最新资讯<span>What news</span></h2>
+                 <ul> 
+                    <!--文章列表页-->
+                    <php>
+                        $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",6);
+                    </php>
+                    <volist name="lists['posts']" id="vo">
+                    <php>
+                    $smeta=json_decode($vo['smeta'], true);
+                    </php> 
+                            <li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank">{$vo.post_title|msubstr=0,15}</a></li>
+                    </volist>
+                    
+                 </ul> 
+           </div><!--a end-->
+
+      <php>
+        $listss = sp_sql_posts_paged("cid:$cat_id;where:recommended=1;order:post_date DESC",6);
+      </php>
+      <if condition="!empty($listss['posts'])"> 
+           <div class="b">
+                 <h2>推荐资讯<span>Recommended news</span></h2>
+                 <ul>  
+                        <volist name="listss['posts']" id="vo">
+                        <php>
+                        $smeta=json_decode($vo['smeta'], true);
+                        </php> 
+                            <li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank">{$vo.post_title|msubstr=0,15}</a></li>
+                        </volist>     
+                 </ul>
+                 
+           </div><!-- b end-->
+      </if>
+
+
+              <php>
+                $listss = sp_sql_posts_paged("cid:$cat_id;where:istop=1;order:post_date DESC",6);
+              </php>
+              <if condition="!empty($listss['posts'])"> 
+                <div class="b">
+                 <h2>置顶资讯<span>Top news</span></h2>
+                   <ul>
+                      <volist name="listss['posts']" id="vo">
+                        <php>
+                        $smeta=json_decode($vo['smeta'], true);
+                        </php>  
+                              <li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" target="_blank">{$vo.post_title|msubstr=0,15}</a></li>
+                      </volist>       
+                   </ul>         
+                </div><!-- b end-->
+              </if>
+           
+<!--gg_right end-->      
+</div><!--main_right-->
+
+</div>
+<!--main end-->
+
+﻿
+<!-- 底部开始 -->
+<tc_include file="Public:footer" />
+<!-- 底部结束-->
+
+
+
+
+</body></html>

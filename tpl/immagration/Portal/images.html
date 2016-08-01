@@ -1,0 +1,200 @@
+<tc_include file=":function" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0026)http://www.immi.cn/assess/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  
+  造成360浏览器画廊出错 
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
+  <meta name="renderer" content="webkit">  
+-->	
+  <title>{$name} {$seo_title} {$site_name}</title>
+  <meta name="keywords" content="{$seo_keywords}">
+  <meta name="description" content="{$seo_description}">
+
+
+  <link href="__TMPL__Public/css/page_about_us.css" rel="stylesheet" type="text/css">
+  <link href="__TMPL__Public/css/project.css" rel="stylesheet" type="text/css">
+  <link href="__TMPL__Public/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="__TMPL__Public/css/imgstyle.css" rel="stylesheet" type="text/css" media="all">
+  <link href="__TMPL__Public/css/swipebox.css" rel="stylesheet" type="text/css">
+  <link href="__TMPL__Public/css/animate.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.useso.com/css?family=Oswald:400,700,300|Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+  <script src="__TMPL__Public/js/hm.js"></script>
+  <script charset="utf-8" src="__TMPL__Public/js/b.js"></script>
+  <!--
+  <script charset="utf-8" src="__TMPL__Public/js/lxb.js"></script>
+  
+  <script type="text/javascript" src="__TMPL__Public/js/assessment_new.js"></script>
+  -->
+
+  <script src="__TMPL__Public/js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <!--Light-Box-->
+    <script type="text/javascript" src="__TMPL__Public/js/jquery-1.11.0.min.js"></script>
+      <link rel="stylesheet" href="__TMPL__Public/css/swipebox.css">
+      <script src="__TMPL__Public/js/jquery.swipebox.min.js"></script> 
+      <script type="text/javascript">
+      jQuery(function($) {
+        $(".swipebox").swipebox();
+      });
+    </script>
+      <!--End-Light-Box-->
+     <!--Script-for-gallery-Here-->
+          <script type="text/javascript" src="__TMPL__Public/js/jquery.mixitup.min.js"></script>
+            <script type="text/javascript">
+            $(function () {
+              
+              var filterList = {
+              
+                init: function () {
+                
+                  // MixItUp plugin
+                  // http://mixitup.io
+                  $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                  });       
+                
+                },
+                
+                hoverEffect: function () {
+                
+                  // Simple parallax effect
+                  $('#portfoliolist .portfolio').hover(
+                    function () {
+                      $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                      $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');       
+                    },
+                    function () {
+                      $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                      $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');               
+                    }   
+                  );        
+                
+                }
+          
+              };
+              
+              // Run the show!
+              filterList.init();   
+        }); 
+  </script>
+</head>
+
+<body>
+  <!--头部开始-->
+  <tc_include file="Public:head" />
+  <!--头部结束-->
+
+<div class="sur_nav">
+  <h2 class="case_logo"><a href="">
+    <img src="__TMPL__Public/images/case_logo.jpg" width="213" height="74" alt="精彩瞬间" title="精彩瞬间"></a></h2>
+    <div class="right">
+      <ul>
+        <!--移民项目-->
+        <foreach name="wonderfulchilds" item="vo">
+          <li><a href="{$vo.href}">{$vo.label}</a></li>
+        </foreach>
+        </ul>    
+    </div>
+</div>
+
+
+  <div id="wrap_pg">
+  	<!--照片-->
+    <div class="container">
+      <div class="gallery">
+        <!-- portfolio -->
+        <div class="portfolio-section" id="portfolio">      
+          <!-- head-section -->
+          <div class="head-section text-center">
+            <h2>{$site_name}精彩瞬间</h2>
+          </div>
+
+
+          <!-- /head-section -->
+          <div id="portfoliolist">
+
+          <php>
+              $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",40);
+          </php>
+          <volist name="lists['posts']" id="vo">
+            <php>
+              $smeta=json_decode($vo['smeta'], true);
+            </php>
+
+            <!--判断是否存在图片，若不存在则不显示-->
+            <if condition="!empty($smeta['thumb'])">
+            <div class="portfolio card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
+              <div class="portfolio-wrapper grid_box">    
+                <a href="{:sp_get_asset_upload_path($smeta['thumb'])}" class="swipebox"  title="{$vo.post_title}">
+                  <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive" alt="">
+                  <span class="zoom-icon"> 
+                  </span>
+                </a>
+              </div>
+            </div>
+            </if>
+
+          </volist>
+
+          <div class="clearfix"> </div>         
+          </div>  
+
+
+        <!--分页显示-->
+        <div id="pages" class="text-c" style="margin-left:200px">
+            <a class="a1" target="_self">{$lists['count']}条</a> 
+
+            {$lists['page']}
+        </div>    
+
+    </div>     
+  </div>
+  <!--照片结束-->
+
+  <script type="text/javascript" src="__TMPL__Public/js/move-top.js"></script>
+  <script type="text/javascript" src="__TMPL__Public/js/easing.js"></script>
+  <script type="text/javascript">
+            jQuery(document).ready(function($) {
+              $(".scroll").click(function(event){   
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+              });
+            });
+            </script>
+  <!--start-smoth-scrolling-->
+  <script type="text/javascript">
+        $(document).ready(function() {
+          /*
+          var defaults = {
+              containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+          };
+          */
+          
+          $().UItoTop({ easingType: 'easeOutQuart' });
+          
+        });
+  </script>
+<!--
+  <script src="__TMPL__Public/js/tw_pinggu.js" type="text/javascript"></script> 
+-->
+  <!--底部开始-->
+<tc_include file="Public:footer" />
+
+</body>
+</html>

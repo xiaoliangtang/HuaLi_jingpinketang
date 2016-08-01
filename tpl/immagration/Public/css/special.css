@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,li,ol,table,tr,td,input,button,em,img,dl,dt,dd,form,theader,tbody,tfoot,a,span,select,label,strong,caption,hr,option{ margin:0; padding:0;}
+ul,ol,li{ list-style:none;}
+body{ font:12px "微软雅黑";background:#fff;position:relative;}
+img,input{ border:none;}
+a{ text-decoration:none;outline: none;star:expression(this.onFocus=this.blur());}
+
+.fixed { position: fixed; right:0; top:0; _position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop)); z-index:999999;}
+.fixed2 { position: fixed; right:0; top:0; _position:absolute;_bottom:auto; _top:expression(eval(document.documentElement.scrollTop)); _margin-top:0; }
+.w1024{width: 1024px; margin: 0 auto; clear: both;}
+
+/*banner*/
+.top_title{width:1024px;height:40px;margin:0 auto;margin-bottom:15px;margin-top:30px;}
+.top_title h2{font-weight:100;font-size:30px;width:150px;height:40px;float:left;display:block;}
+.top_title .right{width:90px;height:35px;float:right;background:url(../images/title_bg.jpg) repeat-x 0 35px;padding-left:780px;padding-top:5px;}
+.top_title a{width:94px;height:35px;display:block;font-size:18px;color:#838383;}
+.top_title a:hover{color:#f43d03}
+
+.banner{ width:1024px; height:285px; overflow:hidden; position:relative;margin:0 auto;margin-top:1px;}
+.banner_show{ width:1024px; height:285px; overflow:hidden;}
+.banner_show a{ display:block; width:1024px; height:285px; position:relative;}
+.banner_show img{ position:absolute; left:0; top:0; display:none; }
+.banner_title_bg{ width:1024px; height:40px; position:absolute; left:0; bottom:0; background:#000; opacity:0.3; filter:alpha(opacity=30);}
+.banner_title{ width:1024px; height:40px; position:absolute; left:0; bottom:0; } 
+.banner_title h5{ float:left; width:540px; padding-left:20px; }
+.banner_title h5 a{ font:18px/40px "微软雅黑"; color:#fff;}
+.banner_title ul{ float:right; width:150px; height:40px;}
+.banner_title li{ float:left; width:14px; height:13px; background:url(../images/ico.png) no-repeat -25px -208px; cursor:pointer; margin-top:14px;margin-right:6px;}
+.banner_title li.hover{ background:url(../images/ico.png) no-repeat -8px -208px; margin-top:14px;}
+.banner_btnl,.banner_btnr{ position:absolute; left:0px; top:90px; width:45px; height:85px; background:url(../images/ico.png) no-repeat left 1px; opacity:0.45; filter:alpha(opacity=45); cursor:pointer; z-index:2;}
+.banner_btnr{ left:979px; background:url(../images/ico.png) no-repeat left -85px;}
+.banner_btn{ opacity:1; filter:alpha(opacity=100);}
+
+.part{width:1024px;height:515px;margin:0 auto;margin-top:40px;}
+.part02,.part03,.part04,.part05{margin-top:0;}
+.title01{width:1024px;height:62px;font-size:26px;color:#4a4a4a;font-weight:bold;margin-bottom:25px;}
+.title01 .left{width:178px;height:62px;background:url(../images/title01.jpg) no-repeat left bottom;float:left;padding-left:10px;}
+.title01 span{font-size:30px;color:#ed0000}
+.title01 .right{width:812px;height:45px;background:url(../images/title_bg.jpg) repeat-x left bottom;float:right;padding-top:10px;}
+.title01 .right a{font-weight:100;width:50px;height:40px;float:right;display:block;font-size:14px;line-height:50px;color:#ccc}
+.title01 .right a:hover{color:#000;}
+
+.title02{width:1024px;height:62px;font-size:26px;color:#4a4a4a;font-weight:bold;margin-bottom:25px;}
+.title02 .left{width:214px;height:62px;background:url(../images/title02.jpg) no-repeat left bottom;float:left;padding-left:10px;}
+.title02 span{font-size:30px;color:#ed0000}
+.title02 .right{width:780px;height:45px;background:url(../images/title_bg.jpg) repeat-x left bottom;float:right;padding-top:10px;}
+.title02 .right a{font-weight:100;width:50px;height:40px;float:right;display:block;font-size:14px;line-height:50px;color:#ccc}
+.title02 .right a:hover{color:#000;}
+
+.title03{width:1024px;height:62px;font-size:26px;color:#4a4a4a;font-weight:bold;margin-bottom:25px;}
+.title03 .left{width:214px;height:62px;background:url(../images/title03.jpg) no-repeat left bottom;float:left;padding-left:10px;}
+.title03 span{font-size:30px;color:#ed0000}
+.title03 .right{width:780px;height:45px;background:url(../images/title_bg.jpg) repeat-x left bottom;float:right;padding-top:10px;}
+.title03 .right a{font-weight:100;width:50px;height:40px;float:right;display:block;font-size:14px;line-height:50px;color:#ccc}
+.title03 .right a:hover{color:#000;}
+
+
+.title04{width:1024px;height:62px;font-size:26px;color:#4a4a4a;font-weight:bold;margin-bottom:25px;}
+.title04 .left{width:238px;height:62px;background:url(../images/title04.jpg) no-repeat left bottom;float:left;padding-left:10px;}
+.title04 span{font-size:30px;color:#ed0000}
+.title04 .right{width:755px;height:45px;background:url(../images/title_bg.jpg) repeat-x left bottom;float:right;padding-top:10px;}
+.title04 .right a{font-weight:100;width:50px;height:40px;float:right;display:block;font-size:14px;line-height:50px;color:#ccc}
+.title04 .right a:hover{color:#000;}
+
+
+.title05{width:1024px;height:62px;font-size:26px;color:#4a4a4a;font-weight:bold;margin-bottom:25px;}
+.title05 .left{width:200px;height:62px;background:url(../images/title05.jpg) no-repeat left bottom;float:left;padding-left:10px;}
+.title05 span{font-size:30px;color:#ed0000}
+.title05 .right{width:790px;height:45px;background:url(../images/title_bg.jpg) repeat-x left bottom;float:right;padding-top:10px;}
+.title05 .right a{font-weight:100;width:50px;height:40px;float:right;display:block;font-size:14px;line-height:50px;color:#ccc}
+.title05 .right a:hover{color:#000;}
+
+.tuwen{width:1024px;height:285px;border-bottom:1px dashed #d2d2d2}
+.tuwen dl{width:315px;height:270px;float:left;margin-right:25px;overflow:hidden;}
+.tuwen dl dd h3{font-size:14px;font-family:"宋体";text-align:center;height:30px;line-height:30px;overflow:hidden;}
+.tuwen dl dd h3 a{color:#6d6d6d}
+.tuwen dl dd h3 a:hover{color:#1f211f}
+.tuwen dl dd{width:315px;height:100px;margin-top:10px;overflow:hidden;}
+.tuwen dl dd p{width:315px;height:70px;font-size:12px;font-family:"宋体";line-height:22px;overflow:hidden;}
+.tuwen dl dd p a{color:#7f7f7f}
+.tuwen dl dd p a:hover{color:#1f211f}
+ul.outer{width:1024px;height:90px;margin-top:15px;}
+ul.outer li{width:262px;height:25px;margin-bottom:3px;line-height:25px;float:left;margin-right:25px;padding-right:30px;overflow:hidden;background:url(../images/li_bg.png) no-repeat left center;padding-left:23px;font-size:14px;font-family:"宋体";}
+ul.outer li a{color:#7a7a7a;}
+ul.outer li a:hover{color:#1f211f;}
+ul.outer li:hover{background:url(../images/li_bg_hover.png) no-repeat left center;}
+
+
+
+

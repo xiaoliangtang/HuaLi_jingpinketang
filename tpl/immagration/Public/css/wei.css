@@ -1,0 +1,52 @@
+/*微信平台*/
+.weixin{height: 228px; width: 304px;}
+.weixin h2{ border-bottom: 2px solid #ccc;
+    color: #0f0f0f;
+    font: bold 26px/40px "微软雅黑";
+    height: 44px;
+    width: 300px;}
+.weixin span.red{color: #bd3220;}
+.weixin dl {
+
+    padding-top: 26px;
+    width: 304px;
+}
+.weixin dl dt{ width: 142px; height: 150px; float: left;}
+.weixin dl dd {
+    color: #000;
+    float: right;
+    font: 12px/24px "宋体";
+    height: 150px;
+    overflow: hidden;
+    padding-right: 20px;
+    width: 120px;
+}
+/*移民微博*/
+.weibo{height: 300px; width: 304px;margin-top:20px;}
+.weibo h2{ border-bottom: 2px solid #ccc;
+    color: #0f0f0f;
+    font: bold 26px/40px "微软雅黑";
+    height: 44px;
+    width: 300px;}
+.weibo span.red{color: #bd3220;}
+
+.weibo dl{width: 304px;padding-top: 26px;}
+.weibo dl dt{ width: 142px; height: 150px; float: left;}
+.weibo dl dd {
+    color: #000;
+    float: right;
+    font: 12px/24px "宋体";
+    height: 150px;
+    overflow: hidden;
+    padding-right: 20px;
+    width: 120px;
+}
+
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index:999;
+	margin:0 auto;
+	background:#ffffff;
+}

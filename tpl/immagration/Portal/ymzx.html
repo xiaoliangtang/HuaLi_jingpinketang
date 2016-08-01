@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0027)http://www.immi.cn/special/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit"> 
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}">
+    <meta name="description" content="{$seo_description}">
+    <link href="__TMPL__Public/css/special.css" rel="stylesheet" type="text/css">
+    <script src="__TMPL__Public/js/hm.js"></script>
+    <script charset="utf-8" src="__TMPL__Public/js/b.js"></script>
+    <!--<script charset="utf-8" src="__TMPL__Public/js/lxb.js"></script>-->
+    <script type="text/javascript" src="__TMPL__Public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/js/special.js"></script>
+</head>
+
+<body>
+<link href="__TMPL__Public/css/common_aojia.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="__ROOT__/favicon.ico"> 
+<script type="text/javascript" src="__TMPL__Public/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="http://www.immi.cn/statics/js/main.js"></script> -->
+<!--<base target="_blank">-->
+<base href="." target="_blank">
+<!--阻止IE下报错JS-->
+<script>window.onerror=function(){return true;}</script>
+
+
+<!--头部文件 开始-->
+<tc_include file="Public:head" />
+<!--头部文件 结束-->
+
+<div class="top_title">
+	<h2>最新资讯</h2>
+    <div class="right"></div>
+</div>
+
+<!--banner-->
+    <div class="banner" id="banner">
+        <div class="banner_show" id="banner_show">
+            
+            <!-- $theme_config['model1_slide']实现动态修改幻灯片的标识 -->
+            <php>
+            $ymzx_slides=sp_getslide($theme_config['model4_ymslide']);
+            </php>
+
+            <foreach name="ymzx_slides" item="vo">
+                <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" title="{$vo.slide_name}" _link="{$vo.slide_url}" width="1024" height="380" alt="{$vo.slide_name}" style="display: none;">
+            </foreach>
+           
+        </div>
+        <div class="banner_title_bg"></div>
+        <div class="banner_title" id="banner_title">
+            <!-- 标题显示 -->
+            <h5><a href="" title=""></a></h5>
+            <!-- 显示图片轮播进度小圆点 -->
+            <ul>
+            <foreach name="ymzx_slides" item="vo">
+                <li class=""></li>
+            </foreach>
+            </ul>
+        </div>
+
+        <div></div>
+        <div class="banner_btnl" id="banner_btnl"></div>
+        <div class="banner_btnr" id="banner_btnr"></div>
+    </div>
+
+
+
+<!--part01--> 
+<volist name="ymzx_all" id="v">
+<div class="part">
+	<div class="title01">
+    	<div class="left"><span>美国</span>{$v.label}</div>
+        <div class="right"><a href="{$v.href}">more</a></div>
+    </div>
+
+
+    <!--文章列表页-->
+    <php>
+        $cat_id = $v['cat_id'];
+        $lists = sp_sql_posts_paged("cid:$cat_id;where:recommended=1 || istop=1;order:post_date DESC;",3);
+
+    </php>
+    <if condition="!empty($lists['posts'])">
+    <div class="tuwen">
+        <volist name="lists['posts']" id="vo">
+            <php>
+            $smeta=json_decode($vo['smeta'], true);
+            </php>
+    	        <dl>
+                <if condition="!empty($smeta['thumb'])">
+                    <dt><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}"><img src="{:sp_get_asset_upload_path($smeta['thumb'])}" width="315" height="155" alt="{$vo.post_title}"></a>
+                    </dt>
+                </if>
+                    <dd>
+                        <h3><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_title}</a></h3>
+                        <p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_excerpt}</a></p>
+                    </dd>
+                </dl>
+        </volist>    		         
+    </div>
+    </if> 
+
+    <ul class="outer">
+            <php>
+            $cat_id = $v['cat_id'];
+            $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",15);
+            </php>
+            <volist name="lists['posts']" id="vo">
+                <php>
+                $smeta=json_decode($vo['smeta'], true);
+                </php>
+    	        <li>
+                <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">
+                <i></i>{$vo.post_title}</a>
+                </li>
+            </volist>
+     </ul>
+</div>
+</volist>
+
+
+<!--底部开始-->
+<tc_include file="Public:footer" />
+<!--底部结束-->
+
+</body></html>

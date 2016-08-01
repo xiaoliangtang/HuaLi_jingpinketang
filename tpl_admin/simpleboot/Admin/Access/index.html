@@ -1,0 +1,115 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap J_check_wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('access/index')}">所有用户资料</a></li>
+		</ul>
+		<form class="well form-search" method="post" id="cid_form">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<select class="select_2" name="status" style="width: 100px;" id="selected_cid">
+						<option value=''>全部</option>
+						<foreach name="status" item="vo">
+						<php>
+							$status_select=$vo['status']==$post_status?"selected":"";
+							$status_name=array("1"=>"已评估","0"=>"未评估");
+						</php>
+						<option value="{$vo.status}"{$status_select}>{$status_name[$vo['status']]}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+		</form>
+		<form class="J_ajaxForm" action="" method="post">
+			<div class="table-actions">
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:u('access/toggle',array('display'=>1))}" data-subcheck="true">评估</button>
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:u('access/toggle',array('hide'=>1))}" data-subcheck="true">取消评估</button>
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:U('access/delete')}" data-subcheck="true">删除</button>
+			</div>
+			<php> 
+				$status=array("1"=>"已评估","0"=>"未评估");
+			</php>
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="J_check_all" data-direction="x" data-checklist="J_check_x"></label></th>
+						<th width="50">ID</th>
+						<th width="200">姓名</th>
+						<th width="50">年龄</th>
+						<th width="50">性别</th>
+						<th width="100">电话号码</th>
+						<th width="100">QQ</th>
+						<th width="150">E-mail</th>
+						<th width="80">详细信息</th>
+						<th width="50">状态</th>
+						<th width="80">操作</th>
+					</tr>
+				</thead>
+				<foreach name="access" item="vo">
+				<tr>
+					<td><input type="checkbox" class="J_check" data-yid="J_check_y" data-xid="J_check_x" name="ids[]" value="{$vo.id}"></td>
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.age}</td>
+					<td>{$vo.sex}</td>
+					<td>{$vo.phone}</td>
+					<td>{$vo.qq}</td>
+					<td>{$vo.email}</td>
+					<td>
+					<a href="{:U('access/displayinfo',array('id'=>$vo['id']))}">查看详细</a>
+					</td>
+					<td>{$status[$vo['status']]}</td>
+					<td>
+						<a href="{:U('access/delete',array('id'=>$vo['id']))}" class="J_ajax_del">删除</a>
+						<if condition="empty($vo['status']) eq 1">
+							<a href="{:U('access/cancelban',array('id'=>$vo['id']))}" class="J_ajax_dialog_btn" data-msg="确定评估此用户吗？">评估</a>
+						<else /> 
+							<a href="{:U('access/ban',array('id'=>$vo['id']))}" class="J_ajax_dialog_btn" data-msg="确定取消评估此用户吗？">取消评估</a>
+						</if>
+					</td>
+				</tr>
+				</foreach>
+				<tfoot>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="J_check_all" data-direction="x" data-checklist="J_check_x"></label></th>
+						<th width="50">ID</th>
+						<th width="200">姓名</th>
+						<th width="50">年龄</th>
+						<th width="100">性别</th>
+						<th width="50">电话号码</th>
+						<th width="100">QQ</th>
+						<th width="150">E-mail</th>
+						<th width="80">详细信息</th>
+						<th width="50">状态</th>
+						<th width="80">操作</th>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="table-actions">
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:u('access/toggle',array('display'=>1))}" data-subcheck="true">评估</button>
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:u('access/toggle',array('hide'=>1))}" data-subcheck="true">取消评估</button>
+				<button class="btn btn-primary btn-small J_ajax_submit_btn" type="submit" data-action="{:U('access/delete')}" data-subcheck="true">删除</button>
+			</div>
+		</form>
+	</div>
+	<script src="__ROOT__/statics/js/common.js?"></script>
+	<script>
+		setCookie('refersh_time', 0);
+		function refersh_window() {
+			var refersh_time = getCookie('refersh_time');
+			if (refersh_time == 1) {
+				window.location.reload();
+			}
+		}
+		setInterval(function() {
+			refersh_window()
+		}, 3000);
+		$(function() {
+			$("#selected_cid").change(function() {
+				$("#cid_form").submit();
+			});
+		});
+	</script>
+</body>
+</html>

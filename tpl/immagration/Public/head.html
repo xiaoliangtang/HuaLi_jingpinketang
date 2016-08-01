@@ -1,0 +1,97 @@
+<?php
+	/* 获取主题配置 */
+	$theme_config = sp_get_plugin_config('Config');
+	/* 获取咨询插件 */
+	//$theme_config2 = sp_get_plugin_config('Consultation');
+	/* 获取图片插件 */
+	$theme_config3 = sp_get_plugin_config('Image');
+?>
+
+<!-- 头部代码 -->
+<link href="__TMPL__Public/css/common_aojia.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="__TMPL__Public/images/favicon.ico"> 
+<script async="" type="text/javascript" src="__TMPL__Public/js/ca-pub-8129816473729933.js"></script>
+<script src="__TMPL__Public/js/hm.js"></script>
+<script charset="utf-8" src="__TMPL__Public/js/b.js"></script>
+<!-- <script charset="utf-8" src="__TMPL__Public/js/lxb.js"></script> -->
+<script type="text/javascript" src="__TMPL__Public/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="http://www.immi.cn/statics/js/main.js"></script> -->
+<!--<base target="_blank">-->
+<base href="." target="_blank">
+<!--阻止IE下报错JS-->
+<script>window.onerror=function(){return true;}</script>
+
+<!--头部文件 开始-->
+<div class="head">
+		<div class="center">
+    		
+        <div class="right">
+        	<ul>
+            	<li>
+	            	<a onclick="shoucang(document.title,window.location)" rel="sidebar">加入收藏</a>
+	            	<a class="last" href="{:UU('portal/sitemap/index')}" title="网站地图">网站地图</a>
+            	</li>
+           </ul>
+        </div>
+        
+    </div>
+</div>
+<div id="logo_row-wrap">
+<div id="logo_row">
+	<div class="left">
+    	<h1>
+    	<a href="{$site_host} "><img src="{:sp_get_asset_upload_path($theme_config3['logo_img'])}" width="254" height="54" alt="{$site_name}" title="{$site_name}"></a>
+    	</h1>
+    </div>
+    
+     
+    <div class="right">
+		<img src="__TMPL__Public/images/pinpai.png" width="404" height="17">
+		<!--咨询评估-->
+        <div class="console">
+	        <foreach name="zpnavs" item="vo">
+				<a href="{$vo.href}">{$vo.label}</a>
+			</foreach>
+		</div>
+    </div>
+</div>
+</div>
+		<div id="box1">
+			<!--导航-->
+			<div class="nav">
+				<!--导航条-->
+				<ul class="nav-main">
+				<foreach name="navs" item="vo">
+					<li><a href="{$vo.href}" target="{$vo.target}">{$vo.label}</a></li>
+			    </foreach>
+				</ul>
+				
+			</div>
+
+		</div>
+	
+   <script type="text/javascript"> 
+// 加入收藏 兼容360和IE6 
+function shoucang(sTitle,sURL) 
+{ 
+try 
+{ 
+window.external.addFavorite(sURL, sTitle); 
+} 
+catch (e) 
+{ 
+try 
+{ 
+window.sidebar.addPanel(sTitle, sURL, ""); 
+} 
+catch (e) 
+{ 
+alert("加入收藏失败，请使用Ctrl+D进行添加"); 
+} 
+} 
+} 
+</script> 
+
+
+
+

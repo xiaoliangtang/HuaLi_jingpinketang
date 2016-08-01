@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0025)http://www.immi.cn/about/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit">     
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}">
+    <meta name="description" content="{$seo_description}">
+    <link href="__TMPL__Public/css/page_about_us.css" rel="stylesheet" type="text/css">
+
+    <!--<base target="_blank">-->
+    <base href="." target="_blank">
+    <script type="text/javascript" src="__TMPL__Public/js/_l.js" id="_lxb_jsonp_igthykpg_" charset="utf-8"></script>
+</head>
+
+<body>
+<!--头部开始-->
+<tc_include file="Public:head" />
+<!--头部结束-->
+
+<div class="contents ">
+
+    <div class="leftnav">
+        <ul>
+            <foreach name="aboutnavs" item="vo">
+                <li><a href="{$vo.href}" class="ac" class="hover">{$vo.label}</a></li>
+            </foreach>
+        </ul>
+    </div>
+
+    <div class="show_1">
+    <h2 class="others">公司活动<br></h2>
+        <div class="news" id="news">
+
+    <!--文章列表页-->
+        <php>
+            $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
+        </php>
+        <volist name="lists['posts']" id="vo">
+            <php>
+            $smeta=json_decode($vo['smeta'], true);
+            </php>
+
+            <div class>
+                <h4><a href="{:leuu('article/index',array('id'=>$vo['tid']))}"><img src="__TMPL__Public/images/tw.png" />&nbsp;{$vo.post_title|msubstr=0,38}</a><span>{:msubstr($vo['post_date'],0,10,'utf-8');}</span></h4>
+                <p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_excerpt'],0,96)}</a></p>
+            </div>
+            <hr style="border:1px dashed #7b7b7b; height:1px;width:689px">
+        </volist>
+        </div>
+
+        <!--分页显示-->
+        <div id="pages" class="text-c">
+            <a class="a1" target="_self">共{$lists['count']}条</a> 
+
+            {$lists['page']}
+        </div>            
+    </div>
+</div>
+
+
+<!-- 导航样式  -->   
+<script type="text/javascript">
+    $(".ac").each(function(){
+        if($(this)[0].href == String(window.location) && $(this).attr('href')!=""){
+            $(this).parents("li").addClass("hover");
+        }
+    });
+</script>
+
+<!--底部开始-->
+﻿<tc_include file="Public:footer" />
+
+</body>
+</html><!DOCTYPE html>
+

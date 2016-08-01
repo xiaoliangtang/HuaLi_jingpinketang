@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,h1,h2,h3,h4,h5,h6,p,ul,li,ol,table,tr,td,input,button,em,img,dl,dt,dd,form,theader,tbody,tfoot,a,span,select,label,strong,caption,hr,option{ margin:0; padding:0;}
+ul,ol,li{ list-style:none;}
+body{ font:12px "微软雅黑";background:#fff;position:relative;}
+img,input{ border:none;}
+a{ text-decoration:none;outline: none;star:expression(this.onFocus=this.blur());}
+
+.sur_nav{width:1024px;height:74px;margin:0 auto;margin-top:10px;background:#efefef;}
+.case_logo{width:213px;height:74px;display:block;float:left;}
+.sur_nav .right{width:761px;height:52px;background:url(../images/sur_nav.jpg) repeat-x 0 0;float:right;padding-top:22px;padding-left:50px;}
+.sur_nav .right li{width:125px;height:25px;line-height:25px;background:url(../images/sur_li_bg.jpg) no-repeat right center;text-align:center;float:left;}
+.sur_nav .right li a{font-size:14px;color:#000;font-family:"宋体"}
+.sur_nav .right li a:hover{color:#e32e03}
+
+.box1{width:1024px;height:280px;margin:0 auto;margin-top:25px;}
+.banner{ width:560px; height:270px; overflow:hidden; position:relative;margin:0 auto;margin-top:1px;float:left;}
+.banner_show{ width:560px; height:270px; overflow:hidden;}
+.banner_show a{ display:block; width:560px; height:270px; position:relative;}
+.banner_show img{ position:absolute; left:0; top:0; display:none; }
+.banner_title_bg{ width:560px; height:40px; position:absolute; left:0; bottom:0; background:#000; opacity:0.3; filter:alpha(opacity=30);}
+.banner_title{ width:560px; height:40px; position:absolute; left:0; bottom:0; } 
+.banner_title h5{ float:left; width:370px; padding-left:20px; }
+.banner_title h5 a{ font:16px/40px "微软雅黑"; color:#fff;}
+.banner_title ul{ float:right; width:150px; height:40px;}
+.banner_title li{ float:left; width:14px; height:13px; background:url(../images/ico.png) no-repeat -25px -208px; cursor:pointer; margin-top:14px;margin-right:6px;}
+.banner_title li.hover{ background:url(../images/ico.png) no-repeat -8px -208px; margin-top:14px;}
+.banner_btnl,.banner_btnr{ position:absolute; left:0px; top:90px; width:45px; height:85px; background:url(../images/ico.png) no-repeat left 1px; opacity:0.45; filter:alpha(opacity=45); cursor:pointer; z-index:2;}
+.banner_btnr{ left:515px; background:url(../images/ico.png) no-repeat left -85px;}
+.banner_btn{ opacity:1; filter:alpha(opacity=100);}
+
+.zhutui{width:415px;height:280px;float:right;}
+.zhutui .up{width:415px;height:135px;border-bottom:1px dashed #7d7d7d ;}
+.zhutui .up h4{background:url(../images/hot.jpg) no-repeat left center;padding-left:65px;font-size:22px;font-weight:100;overflow:hidden; height: 30px; line-height: 30px;}
+.zhutui .up h4 a{color:#cc1905;font-size:22px;font-weight:100;overflow:hidden; height: 30px; line-height: 30px;display: block;}
+.zhutui .up p{font-family:"宋体";line-height:22px;padding-top:15px;overflow:hidden;height:65px}
+.zhutui .up p a{color:#7d7d7d}
+.zhutui .up p a:hover{color:#1f211f}
+.zhutui .down{width:415px;height:125px;margin-top:10px;}
+.zhutui .down li{width:395px;height:30px;overflow:hidden;font-size:16px;line-height:30px;background:url(../images/down_li_bg.jpg) no-repeat left center;padding-left:20px;overflow:hidden;}
+.zhutui .down li a{color:#333}
+
+.part{width:1024px;height:300px;margin:0 auto;margin-top:30px;}
+.part .title{width:1024px;height:40px;border-bottom:2px solid #ccc;}
+.part .title .left{width:220px;height:40px;line-height:40px;font-weight:bold;font-size:24px;color:#0e0e0e;float:left}
+.part .title .left span{font-size:28px;color:#b41500}
+.part .title ul{width:804px;height:40px;float:right;font-size:14px;line-height:50px;color:#ccc}
+.part .title ul li{float:left;padding:0 15px;background:url(../images/sur_li_bg.jpg) no-repeat right center;}
+.part .title ul li.last{background:none;}
+.part .title ul li a{color:#000;font-size:14px;}
+.part .title ul li a:hover{color:#e15a18;}
+
+.part .inner{width:1024px;height:250px;margin-top:20px;}
+.part .inner dl{width:315px;height:250px;float:left;margin-right:25px;}
+.part .inner dl dt{width:315px;height:162px;}
+.part .inner dl dd{width:315px;height:62px;margin-top:15px;}
+.part .inner dl dd p{height:64px;overflow:hidden;line-height:20px;font-family:"宋体"}
+.part .inner dl dd p a{color:#7d7d7d}
+.part .inner dl dd p a:hover{color:#000;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+.nav{ height:15px; width:auto;}
+#gdgg{ width:973px; margin:0px auto; height:auto; margin-top:15px;}
+#main{ width:973px; height:auto; margin-top:15px; margin:0px auto;}
+/*主体左边代码开始*/
+#main #main_left{width:708px; height:auto;float:left;border:#dfe3e5 1px solid;}
+#main #main_leftwb{width:708px; height:auto;border:#dfe3e5 1px solid;}
+#main_left .a{width:708px;height:42px;border-bottom:#dfe3e5 1px solid; position:relative;}
+#main_left .a h1{ position:absolute;top:12px;left:20px; margin:0px; padding:0px;font-size:16px; font-weight:bold;}
+#main_left .a h1 span{ font-weight:normal; font-size:14px;}
+#main_left .a h2{ position:absolute;top:14px;_top:15px;+top:15px; right:30px; margin:0px; padding:0px;}
+#main_left .a h2 span{ font-weight:bold; color:#F00;}
+#main_left .b{ width:708px; height:30px;background:url(./xxxg.gif) repeat-x;}
+#main_left .c{ width:678px; padding:15px; line-height:25px; height:auto;}
+.d h3{ margin:0px; padding:0px; text-align:center; color:#F00; font-size:16px; margin-bottom:10px; font-weight:bold;}
+.e h4{ width:620px;border-bottom: #999999 1px dotted; padding-bottom:5px; text-align:center; margin-left:40px; margin-right:40px;}
+.dddd{ margin-bottom:10px;text-align:right; margin-right:10px;}
+/*案例展示代码*/
+.nntp{width:218px; height:193px; margin:0px auto; float:left; margin:20px 0px 0px 14px;_margin:20px 0px 0px 5px;}
+.nntp .dd1{ background:url(./tptop.png) no-repeat; margin:0px; padding:0px; width:218px; height:13px;}
+.nntp .dd2{ background:url(./tpmd.png) repeat-y;margin:0px; padding:0px;width:218px; height:auto; text-align:center;}
+.nntp .dd3{ background:url(./tpdown.png) no-repeat; margin:0px; padding:0px;width:218px; height:39px; line-height:30px; padding-left:5px; padding-right:5px; text-align:center;}
+.nntp .dd3 h2{ margin:0px; padding:0px;}
+.nntp .dd3 span{color:#F00;}
+/*主体右边代码开始*/
+#main #main_right{width:250px;height:auto;float:right;}
+#main_right .a{ width:218px;padding:15px 15px 15px 15px;border:#dfe3e5 1px solid; height:auto;}
+#main_right .b{ width:248px; height:auto;border:#dfe3e5 1px solid;border:#dfe3e5 1px solid; margin-top:15px;}
+#main_right .b h2{height:28px; border-bottom:#dfe3e5 1px solid;background:url(./bgg.gif) repeat-x; line-height:30px; margin:0px;padding:0px 0px 0px 10px; font-weight:bold;}
+#main_right .b h2 span{ font-weight:normal;}
+#main_right .b ul{ margin:0px; padding:0px; margin-top:15px; margin-left:15px; margin-bottom:12px;}
+#main_right .b ul li{ list-style:none; margin-bottom:10px;background:url(./xxxx.gif) no-repeat left 5px; padding-left:15px;}
+/*新闻，解决方案代码*/
+.xw{ width:650px; height:84px;padding:10px; margin-left:20px;_margin-left:10px; margin-bottom:10px; float:left;}
+.xw .xwa{ width:84px; height:84px; background:url(./fn.gif) no-repeat; float:left;}
+.xw .zs{ width:84px; height:84px; background:url(./zs.gif) no-repeat; float:left;}
+.xw .xwaa{ width:84px; height:84px; background:url(./love.gif) no-repeat; float:left;}
+.xw .xwa h5{font-size: 30px; font-family: "黑体"; color: #FFFFFF; text-align:center; margin-top:23px;_margin-top:34px;+margin-top:28px;}
+.xw .xwb{ width:530px; height:84px;float:right; margin:0px; padding:0px;}
+.xw .xwb dt{ margin:0px; padding:0px; font-weight:bold; margin-bottom:5px;}
+.xw .xwb dd{ margin:0px; padding:0px; line-height:20px;}
+.xw_bd{ width:550px; height:50px;_height:20px; margin-left:80px; margin-bottom:30px; _padding-bottom:15px;border:#dfe3e5 1px solid; line-height:50px;_line-height:20px;_padding-top:13px; text-align:center; margin-top:30px;_margin-top:30px;}
+/*内容分页*/
+.digg {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center;}  
+.digg A {BORDER-RIGHT:#999999 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #999999 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #999999 1px solid; COLOR: #003300; PADDING-TOP: 2px; BORDER-BOTTOM: #999999 1px solid; TEXT-DECORATION: none}  
+.digg A:hover {BORDER-RIGHT: #003300 1px solid; BORDER-TOP: #003300 1px solid; BORDER-LEFT: #003300 1px solid; COLOR: #000; BORDER-BOTTOM: #003300 1px solid}  
+.digg A:active {BORDER-RIGHT: #003300 1px solid; BORDER-TOP: #003300 1px solid; BORDER-LEFT: #003300 1px solid; COLOR: #000; BORDER-BOTTOM: #003300 1px solid}  
+.digg SPAN.current {BORDER-RIGHT: #003300 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #003300 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #003300 1px solid; COLOR: #fff; PADDING-TOP: 2px; BORDER-BOTTOM: #003300 1px solid; BACKGROUND-COLOR: #FF6600}  
+.digg SPAN.disabled {BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px }

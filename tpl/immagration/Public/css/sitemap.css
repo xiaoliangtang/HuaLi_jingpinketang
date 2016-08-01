@@ -1,0 +1,12 @@
+/*网站地图*/
+#wrap{ width:1002px; overflow:auto; margin:30px auto;}
+.ttop{height: 40px; background-color: #afafaf; font: 18px/40px "微软雅黑"; color: #FFF; text-indent: 20px;}
+
+.dao {  border-bottom: 1px solid #dadada;
+    height: 100px;
+    padding: 14px 0;
+    text-indent: 1em;}
+.dao h3 a{font: 18px/37px "微软雅黑"; color: #a13c10;}
+.dao h3 a:hover,.dao ul li a:hover{color:#ff5400 ;}
+.dao ul li{float: left;padding-right:20px; display: inline;}
+.dao ul li a{font:16px/30px "微软雅黑";color: #474747;}

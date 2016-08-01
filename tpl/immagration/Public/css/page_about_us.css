@@ -1,0 +1,232 @@
+
+.contents{width:1024px;  height: auto;margin: 0 auto; margin-top: 50px; }
+.leftnav{ width:200px; border:2px solid #ececec;height: 500px; float:left;text-align: center;}
+.leftnav ul{ float:left;}
+.leftnav ul li{ width:200px; height:35px; margin-top:24px; background:url(../images/zhaopin_36.jpg) left top no-repeat; float:left; font:16px/35px "微软雅黑"; color:#101010; cursor:pointer;}
+.leftnav ul li a.ac{width:200px; height:35px;background:url(../images/zhaopin_36.jpg) left top no-repeat; float:left; }
+
+.leftnav ul li.hover,.leftnav ul li a.ac:hover{width:200px; height:35px; margin-top:24px; background:url(../images/bg_ab.png) left top no-repeat #f3f3f3; float:left; font:16px/35px "微软雅黑"; color:#e8340c;}
+.leftnav ul li a.ac:hover{margin-top: 0;}
+.rightcons{ width:710px; height:auto; padding-bottom:50px; float:right;}
+.rightconsbt1{    border-bottom: 1px solid #cb1707;
+    color: #cb1707;
+    font: 22px/30px "微软雅黑";
+    height: 27px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 697px;}
+.rightconsbt1 i{  background: url(../images/index_aj.png) no-repeat  -131px 6px ;
+    float: left;
+    height: 27px;
+    width: 40px;}
+.show ul {
+    height: 105px;
+    margin-top: 14px;
+    overflow: hidden;
+    padding-left: 10px;
+    width: 689px;
+}
+.show ul.end {
+    margin-bottom: 40px;
+}
+.show li {
+    display: inline;
+    float: left;
+    height: 95px;
+    margin: 24px 30px 24px 0;
+    overflow: hidden;
+    width: 144px;
+}
+
+.show1 ul.top {
+    margin-top: 14px;
+    overflow: hidden;
+
+    width: 740px;
+}
+
+.show1 ul.top li {
+    display: inline;
+    float: left;
+    margin: 24px 16px 24px 0;
+    overflow: hidden;
+}
+
+.show1 ul.bot {
+      margin-top: 14px;
+    overflow: hidden;
+    padding-left: 10px;
+    width: 706px;
+}
+
+.show1 ul.bot li {
+    display: inline;
+    float: left;
+    margin: 0 45px 22px 0;
+    overflow: hidden;
+}
+
+
+.rightcons p.bg1{width: 690px;}
+.rightcons p{  text-align: justify; height:auto;  padding-bottom:15px; color:#7b7b7b; font:14px/28px "微软雅黑"; float:left;}
+.rightcons p.p5{text-indent: 2em;padding: 4px 0;}
+.rightcons p span{ width:697px; height:32px; float:left; font: 16px/32px "微软雅黑"; color:#000;}
+.rightcons p span.bt1{ width:697px; height:40px; float:left; font:bold 18px/40px "宋体"; color:#c12822;}
+.rightcons p span.bt2{ width:697px; height:40px; float:left; font:bold 14px/40px "宋体"; color:#000;}
+table{ margin-left:120px;}
+table tr th{ height:30px; font:bold 14px/30px "宋体"; border:1px solid #CCCCCC;text-align:center;}
+table tr td{ height:30px; font:12px/30px "宋体"; border:1px solid #CCCCCC;}
+.col{ background:#FF9933; color:#fff;}
+.bg2{ margin:0 auto; width:500px; height:252px; margin-top:20px; background:url(../images/xinchou_04.jpg) left top no-repeat;}
+.bg3{ margin:0 auto; width:411px; height:219px; background:url(../images/xinchou_07.jpg) left top no-repeat;}
+
+.rollBox{width:730px;overflow:hidden;padding:12px 0 5px 6px;margin:0 auto;}
+.rollBox .LeftBotton{height:52px;width:19px;background:url(../images/button.gif) no-repeat 11px 0;overflow:hidden;float:left;display:inline;margin:50px 0 0 0;cursor:pointer;}
+.rollBox .RightBotton{height:52px;width:20px;background:url(../images/button.gif) no-repeat -8px 0;overflow:hidden;float:left;display:inline;margin:50px 0 0 0;cursor:pointer;}
+.rollBox .Cont{width:678px; border-left:1px solid #ccc; border-right:1px solid #ccc; overflow:hidden;float:left;}
+.rollBox .ScrCont{width:10000000px;}
+.rollBox .Cont .pic{width:225px;float:left;text-align:center;}
+.rollBox .Cont .pic img{padding:4px;background:#fff;border:1px solid #ccc;display:block;margin:0 auto; border-width:1px 0;}
+.rollBox .Cont .pic p{line-height:26px;color:#505050;}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{color:#626466;text-decoration:none;}
+.rollBox .Cont a:hover{color:#f00;text-decoration:underline;}
+.rollBox #List1,.rollBox #List2{float:left;}
+.hremail{ width:453px; height:25px; margin:10px 0 10px 60px; font:bold 20px/25px "微软雅黑"; color:#FE0000; float:left;}
+
+
+
+
+.show_1 {
+    float: right;
+    overflow: hidden;
+    width: 763px;
+}
+.show_1 h2 {
+    border-bottom: 1px solid #ea5503;
+    color: #ea5503;
+    font-family: "微软雅黑";
+    font-size: 24px;
+    font-weight: normal;
+    height: 50px;
+    padding-left: 0;
+    width: 700px;
+}
+.show_1 h2.other {
+    margin-bottom: 24px;
+}
+.show_1 h2 span {
+    color: #444;
+}
+.show_1 p {
+    line-height: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 689px;
+}
+.show_1 p.end {
+    margin-bottom: 20px;
+}
+
+
+.news {
+    overflow: hidden;
+    width: 723px;
+}
+.news div {
+    background: url(../images/news.gif) repeat-x scroll left bottom rgba(0, 0, 0, 0);
+    height: 116px;
+    width: 701px;
+}
+.news h4 {
+    background: url(../images/news_div_h3.gif) no-repeat scroll left 19px rgba(0, 0, 0, 0);
+    font-family: "宋体";
+    font-size: 14px;
+    height: 20px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.news div.active {
+    background-color: #fafafa;
+}
+.news div.active h4 {
+    background: url(../images/news_div_active_h3.gif) no-repeat scroll left 19px rgba(0, 0, 0, 0);
+}
+.news div h4 span {
+    color: #7a7a7a;
+    float: right;
+    font-weight: normal;
+    height: 16px;
+    left: 30px;
+    width: 80px;
+}
+.news h4 a {
+    color: #414141;
+    float: left;
+    font: bold 14px/28px "宋体";
+}
+.news div.active h4 a {
+    color: #fd5806;
+}
+.news p {
+    padding-left: 0;
+    padding-top: 12px;
+}
+.news p a {
+    color: #7d7d7d;
+    font: 14px/28px "宋体";
+}
+.news div.active p a {
+    color: #000;
+}
+#pages {
+    float: left;
+    height: 24px;
+    margin: 40px 0 20px;
+    text-align: center;
+    width: 723px;
+}
+#pages a {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #e3e3e3;
+    color: #333;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+    text-align: center;
+    text-decoration: none;
+}
+#pages a.a1 {
+    padding: 0;
+    width: 56px;
+}
+#pages a:hover {
+    background: none repeat scroll 0 0 #f44806;
+    color: #000;
+    text-decoration: none;
+}
+#pages span {
+    background: none repeat scroll 0 0 #f44806;
+    border: 1px solid #f44806;
+    color: #fff;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 10px;
+    text-align: center;
+}
+#page .noPage {
+    border: 1px solid #e3e3e3;
+    color: #a4a4a4;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    width: 56px;
+}
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<php>
+//列表页面包屑导航函数
+function _sp_get_path($cid,$title=''){
+	//返回指定分类页面的所有信息
+	$term = sp_get_term($cid);		
+	$html="<a href=\"__ROOT__\">首页</a> <span class=\"divider\">/&nbsp;</span>";
+	//返回指定分类页面的分类的所有信息
+	$parent = sp_get_term($term['parent']);
+	//如果存在父类
+	if($parent){
+		$url=UU('portal/list/index',array('id'=>$term['parent']));
+		$html.="<a href=\"$url\">".$parent['name']."</a> <span class=\"divider\">/&nbsp;</span>";
+	}
+	$fparent = sp_get_term($parent['parent']);
+	if($fparent){
+		$url=UU('portal/list/index',array('id'=>$term['fparent']));
+		$html.="<a href=\"$url\">".$fparent['name']."</a>";
+	}
+	
+	//文章页	
+	if(empty($title)){
+		$html.="<a class=\"active\">".$term['name']."</a>";
+	}else{
+		$url=UU('portal/list/index',array('id'=>$cid));
+		$html.="<a href=\"$url\">".$term['name']."</a><span class=\"divider\">&nbsp;/&nbsp;</span>";
+		$html.="$title";
+	}
+	echo $html;
+}
+
+
+function _sp_get_pid($id){
+	$data = M('term_relationships')->where(array('tid'=>$id))->field('term_id')->select();
+	$pid = $data[0]['term_id'];
+	return $pid;
+}
+</php>

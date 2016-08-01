@@ -1,0 +1,354 @@
+<admintpl file="header"/>
+<style type="text/css">
+.col-auto { overflow: auto; _zoom: 1;_float: left;}
+.col-right { float: right; width: 210px; overflow: hidden; margin-left: 6px; }
+.table th, .table td {vertical-align: middle;}
+.table th{text-align:center;}
+</style>
+</head>
+<body class="J_scroll_fixed">
+<div class="wrap J_check_wrap">
+  <ul class="nav nav-tabs">
+     <li><a href="{:U('access/index')}">所有用户资料</a></li>
+     <li class="active"><a>用户详细资料</a></li>
+  </ul>
+  <form name="myform" id="myform" action="{:U('slide/add_post')}" method="post" class="form-horizontal J_ajaxForms" enctype="multipart/form-data">
+
+  <div class="col-auto">
+    <div class="table_full">
+	<volist name="infos" id="vo">
+      <table class="table table-bordered">
+	        <tr>
+              <th width="120">提交时间：</th>
+              <td>
+              	<input type="text" style="width:400px;" id="title" value="{$vo.commit_time}" style="color:" class="input input_hd J_title_color"/>
+              </td>
+            </tr>
+			
+			<tr><th style="font-size:15px;color:red;">基本信息</th></tr>
+            <tr>
+              <th width="120">姓名：</th>
+              <td>
+              	<input type="text" style="width:400px;" id="title" value="{$vo.name}" style="color:" class="input input_hd J_title_color"/>
+              </td>
+            </tr>
+            
+			<tr>
+              <th width="120">性别：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.sex}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">年龄：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.age}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">电话：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.phone}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">QQ：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.qq}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">E-mail：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.email}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">婚否：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.marry}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">最高学历：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.destination}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">有无小孩：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.child}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">小孩年龄：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.child_age}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">英语水平：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.en_level}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+			  
+            </tr>
+			
+			<tr>
+              <th width="120">所在地：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.place}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">申请国有无亲属：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.relatives}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr><th style="font-size:15px;color:red;">配偶信息</th></tr>
+			
+			<tr>
+              <th width="120">年龄：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.pei_age}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">最高学历：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.pei_destination}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">英语水平：</th>
+              <td>
+              <input type='text' name='slide_url'  value='{$vo.pei_en_level}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">申请国有无亲属：</th>
+              <td>
+              <input type='text' value='{$vo.pei_relatives}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr><th style="font-size:15px;color:red;">专业学历信息</th></tr>
+			
+			<tr>
+              <th width="120">就读院校：</th>
+              <td>
+              <input type='text' value='{$vo.colleage}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">专业：</th>
+              <td>
+              <input type='text' value='{$vo.majar}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">学位：</th>
+              <td>
+              <input type='text' value='{$vo.degree}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">毕业时间：</th>
+              <td>
+              <input type='text' value='{$vo.graduate_time}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr><th style="font-size:15px;color:red;">工作经历信息</th></tr>
+			
+			<tr>
+              <th width="120">起止年月：</th>
+              <td>
+              <input type='text' value='{$vo.qz_year}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">公司名称：</th>
+              <td>
+              <input type='text' value='{$vo.company}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+			<tr>
+              <th width="120">职务：</th>
+              <td>
+              <input type='text' value='{$vo.duty}' style='width:400px' class='input  input_hd J_title_color'>
+              </td>
+            </tr>
+			
+             <tr>
+              <th width="120">了解公司渠道：</th>
+              <td>
+              	
+              	<textarea name='slide_content' id='description' style='width:60%;height:100px;'  >{$vo.way}</textarea>
+              </td>
+            </tr>
+                               
+        </tbody>
+      </table>
+	  </volist>
+    </div>
+  </div>
+  	<div class="form-actions">
+           <button class="btn btn-primary btn_submit J_ajax_submit_btn"type="submit">提交</button>
+      		<a class="btn" href="__URL__">返回</a>
+      </div>
+ </form>
+</div>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/content_addtop.js"></script>
+<script type="text/javascript"> 
+$(function () {
+	//setInterval(function(){public_lock_renewal();}, 10000);
+	$(".J_ajax_close_btn").on('click', function (e) {
+	    e.preventDefault();
+	    Wind.use("artDialog", function () {
+	        art.dialog({
+	            id: "question",
+	            icon: "question",
+	            fixed: true,
+	            lock: true,
+	            background: "#CCCCCC",
+	            opacity: 0,
+	            content: "您确定需要关闭当前页面嘛？",
+	            ok:function(){
+					setCookie("refersh_time",1);
+					window.close();
+					return true;
+				}
+	        });
+	    });
+	});
+	/////---------------------
+	 Wind.use('validate', 'ajaxForm', 'artDialog', function () {
+			//javascript
+	        
+	        var form = $('form.J_ajaxForms');
+	        //ie处理placeholder提交问题
+	        if ($.browser.msie) {
+	            form.find('[placeholder]').each(function () {
+	                var input = $(this);
+	                if (input.val() == input.attr('placeholder')) {
+	                    input.val('');
+	                }
+	            });
+	        }
+	        
+	        var formloading=false;
+	        //表单验证开始
+	        form.validate({
+				//是否在获取焦点时验证
+				onfocusout:false,
+				//是否在敲击键盘时验证
+				onkeyup:false,
+				//当鼠标掉级时验证
+				onclick: false,
+	            //验证错误
+	            showErrors: function (errorMap, errorArr) {
+					//errorMap {'name':'错误信息'}
+					//errorArr [{'message':'错误信息',element:({})}]
+					try{
+						$(errorArr[0].element).focus();
+						art.dialog({
+							id:'error',
+							icon: 'error',
+							lock: true,
+							fixed: true,
+							background:"#CCCCCC",
+							opacity:0,
+							content: errorArr[0].message,
+							cancelVal: '确定',
+							cancel: function(){
+								$(errorArr[0].element).focus();
+							}
+						});
+					}catch(err){
+					}
+	            },
+	            //验证规则
+	            rules: {'slide_name':{required:1}},
+	            //验证未通过提示消息
+	            messages: {'slide_name':{required:'请输入名称'}},
+	            //给未通过验证的元素加效果,闪烁等
+	            highlight: false,
+	            //是否在获取焦点时验证
+	            onfocusout: false,
+	            //验证通过，提交表单
+	            submitHandler: function (forms) {
+	            	if(formloading) return;
+	                $(forms).ajaxSubmit({
+	                    url: form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+	                    dataType: 'json',
+	                    beforeSubmit: function (arr, $form, options) {
+	                    	formloading=true;
+	                    },
+	                    success: function (data, statusText, xhr, $form) {
+	                    	formloading=false;
+	                        if(data.status){
+								setCookie("refersh_time",1);
+								//添加成功
+								Wind.use("artDialog", function () {
+								    art.dialog({
+								        id: "succeed",
+								        icon: "succeed",
+								        fixed: true,
+								        lock: true,
+								        background: "#CCCCCC",
+								        opacity: 0,
+								        content: data.info,
+										button:[
+											{
+												name: '继续添加？',
+												callback:function(){
+													reloadPage(window);
+													return true;
+												},
+												focus: true
+											},{
+												name: '返回列表',
+												callback:function(){
+													location.href="__URL__";
+													return true;
+												}
+											}
+										]
+								    });
+								});
+							}else{
+								isalert(data.info);
+							}
+	                    }
+	                });
+	            }
+	        });
+	    });
+	////-------------------------
+});
+</script>
+</body>
+</html>

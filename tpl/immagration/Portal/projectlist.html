@@ -1,0 +1,314 @@
+<tc_include file=":function" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://www.immi.cn/ca/federal_invest/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="”renderer”content=”webkit|ie-comp|ie-stand”">
+  <meta http-equiv="X-UA-Compatible" content="IE=8">	
+  <title>{$name} {$seo_title} {$site_name}</title>
+  <meta name="keywords" content="{$seo_keywords}">
+  <meta name="description" content="{$seo_description}">
+  <link rel="stylesheet" href="__TMPL__Public/css/list_ajbaili_canada.css" type="text/css">
+  <!--<base target="_blank">-->
+  <base href="." target="_blank"> 
+  <!--阻止IE下报错JS-->
+  <script src="__TMPL__Public/js/hm.js"></script>
+  <script charset="utf-8" src="__TMPL__Public/js/b.js"></script>
+  <!--<script charset="utf-8" src="__TMPL__Public/js/lxb.js"></script>-->
+  <script>window.onerror=function(){return true;}</script>
+  <link rel="stylesheet" href="__TMPL__Public/css/1001.css" type="text/css" charset="utf-8">
+</head>
+<body>
+
+<!--头部开始-->
+<tc_include file="Public:head" />
+<!--头部结束-->
+   
+<div class="wrap">
+	<!--主体开始-->
+<div class="container">
+<p style="height:20px"></p>
+   <!--主体内容开始-->
+  <div class="contentbox">
+       	<div class="sideLeft">
+            	<div class="contentL">
+              <!--面包屑导航-->
+                	<div id="CL_top">
+                      <ul>
+                        <php>_sp_get_path($_GET['id']);</php> 
+                      </ul>
+                  </div>
+
+
+                  <php>
+                  $i = 1;
+                  $lists = sp_sql_posts_paged("cid:$cat_id;where:recommended=1;order:post_date DESC;",2);
+                  </php>
+                  
+                  <!--推荐-->
+                  <if condition="!empty($lists['posts'])">
+                  <div class="contentL_tj">
+
+
+                    <volist name="lists['posts']" id="vo">   
+                        <php>
+                        $smeta=json_decode($vo['smeta'], true);
+                        </php>
+
+                      	<div class="vtitle"><em class="v v02">热点推荐<php>echo $i;</php></em>
+                            <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_title|msubstr=0,25}</a>
+                        </div>
+                        <div class="vcon" style="display: block;">
+                          <div class="vconlist">
+                            <p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{:msubstr($vo['post_excerpt'],0,56)}</a></p>
+                          </div>
+                        </div>
+                        <hr>
+                        <php>$i = $i++;</php>
+                    </volist>
+                  </div>
+                  </if>
+
+                <!--文章列表页-->
+                <div class="contentLcon">
+                <ul>
+                    <php>
+                    $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
+                    </php>
+                    <volist name="lists['posts']" id="vo">   
+                        <php>
+                        $smeta=json_decode($vo['smeta'], true);
+                        </php>
+
+                  	<li class="">
+                      <dl>
+                        <dt>
+                         <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_title} </a>
+                        </dt>
+                        <dd>{:msubstr($vo['post_excerpt'],0,100)}</dd>
+                      </dl>
+                    
+                      <div class="contentLcon_info">
+                      <p class="contentLcon_time">{:msubstr($vo['post_date'],0,10,'utf-8');}</p>
+
+                      <!--分享插件-->
+                      <p>
+                          {:hook('share')}
+                      </p>
+                      </div>
+                    </li>
+                    </volist>
+                </ul> 
+          </div>
+
+          <div class="page">
+             <div class="pagebox"></div>
+                         <a class="a1" target="_self">共{$lists['count']}条</a> 
+
+            {$lists['page']}        
+          </div>
+
+        </div>
+      </div>
+
+
+
+		<div class="sideRight">
+            <!--轮播图1-->
+      <div class="logfocus1">
+            <div class="sArea1">         
+              <!-- $theme_config['model1_slide']实现动态修改幻灯片的标识 -->
+              <php>
+              $ymproject_slides = sp_getslide($theme_config['model11_slide']);
+              </php>
+              <ul>
+              <foreach name="ymproject_slides" item="vo">
+                  <li><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" title="{$vo.slide_name}" _link="{$vo.slide_url}" width="304" height="184" alt="{$vo.slide_name}">
+                  </li>
+              </foreach>
+              </ul>
+            </div>
+
+            <ul class="num_dd1">
+              <foreach name="ymproject_slides" item="vo">
+                  <li class=""></li>
+              </foreach>
+           </ul>   
+
+      </div>    
+    <!--轮播图 end-->
+
+
+    <!--热门标签-->  
+      <div class="biaoqian">
+         <h2><span class="red">热门</span>标签</h2>
+         <ul>
+         <foreach name="allnavs" item="vo">
+             <li><a href="{$vo.href}">{$vo.label}</a></li>   
+         </foreach>    
+        </ul>    
+      </div>
+		<!--移民评估--> 	
+      <div class="yping">
+      <h5>移民评估</h5>
+			<div class="dem">
+      <form target="_self" action="{:leuu('list/post_displayinfo')}" method="post" enctype="multipart/form-data" name="myform" id="myform">
+	
+          <table border="0px" width="300">
+           
+              <tbody>
+              <tr style="width:260px; "> 
+                <td align="right" class="le">姓名</td>
+                <td><input type="text" id="name" name="name" style="width:150px; "></td>
+                <td style="display: block;"><div id="yhmTip" style="width:187px"></div></td>
+              </tr>
+              <tr style="width:260px; "> 
+                <td align="right" class="le">性别</td>
+                <td><input type="text" id="sex" name="sex" style="width:150px; "></td>
+                <td style="display: block;"><div id="yhmTip" style="width:187px"></div></td>
+              </tr>
+              <tr style="width:260px; "> 
+                <td align="right" class="le">年龄</td>
+                <td><input type="text" id="age" name="age" style="width:150px; "></td>
+                <td style="display: block;"><div id="yhmTip" style="width:187px"></div></td>
+              </tr>
+              <tr> 
+                <td align="right" class="le">手机</td>
+                <td><input type="text" id="phone" name="phone" style="width:150px"></td>
+                <td style="display: block;"><div id="sjTip" style="width:187px"></div></td>
+              </tr>
+                <tr> 
+                <td align="right" class="le">邮箱</td>
+                <td><input type="text" id="email" name="email" style="width:150px"></td>
+                <td style="display: block;"><div id="emailTip" style="width:187px"></div></td>
+              </tr>
+              <tr> 
+                <td align="right" class="le">QQ</td>
+                <td><input type="text" id="qq" name="qq" style="width:150px"></td>
+                <td style="display: block;"><div id="qqTip" style="width:187px"></div></td>
+              </tr>
+             <tr style="width: 289px; padding: 10px 0px; float: left;">
+                  <td align="right" style="padding-left:20px">请选学历：</td>
+                  <td style="padding: 5px 2px;"><select id="education" name="education" class="required">
+                          <option value="">请选择</option>
+                          <option value="大专">大专以下</option>
+                          <option value="大专">大专</option>
+                          <option value="本科">本科</option>
+                          <option value="硕士">硕士</option>
+                          <option value="博士">博士</option>
+                  </select>
+                  </td>
+              </tr>
+              
+               <tr> 
+                <td colpan="3" style="padding-left: 64px; padding-top: 4px;"><input type="submit" name="dosubmit" id="dosubmit" value="确定"></td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </form>
+
+      </div>
+		</div>
+          
+       <!--微信平台-->  
+        {:hook('weixin')}
+
+
+       <!--移民微博-->  
+        {:hook('weibo')}            
+           
+   </div>
+
+</div>
+</div>
+</div> 	    
+    
+<!--主题内容结束-->
+
+<!--底部开始-->
+﻿<tc_include file="Public:footer" />
+
+<!--左则列表当前状态-->	
+<script type="text/javascript">
+    	var oMenu=document.getElementById('tag');
+		var aLiMenu=oMenu.getElementsByTagName('li');		
+		
+		for(var i=0; i<aLiMenu.length; i++){
+			aLiMenu[i].onclick=function(){
+				for(var i=0; i<aLiMenu.length; i++){
+					aLiMenu[i].className='';	
+				}
+				this.className='on';
+			};
+		}
+    </script>
+<script>var sharethis=function(type,url,title,newsPicture){switch(type){case"163":url="http://t.163.com/article/user/checkLogin.do?link=http://digi.163.com/&source="+encodeURIComponent("\u7f51\u6613\u6570\u7801")+"&info="+encodeURIComponent(title+" "+url)+"&images="+newsPicture+"&togImg=true";break;case"sina":url="http://service.weibo.com/share/share.php?title="+encodeURIComponent(title+" "+url)+"&pic="+newsPicture;break;case"rr":url="http://widget.renren.com/dialog/share?resourceUrl="+encodeURIComponent(url+"#sns_renren")+"&title="+title+"&images="+newsPicture;break;case"ydCloud":url="http://note.youdao.com/memory/?url="+url+"&title="+encodeURIComponent(title+"&summary=&product=\u7f51\u6613163\u95e8\u6237");break;case"qqZone":url="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+encodeURIComponent(url+"#sns_qqZone&title="+title);break;default:break}window.open(url)};</script>
+    
+<!--<script type="text/javascript" src="__TMPL__Public/js/jquery-1.10.2.min.js"></script>-->
+<script type="text/javascript">
+$(function(){
+	//菜单隐藏展开
+	var tabs_i=0
+	$('.vtitle').mouseover(function(){
+		var _self = $(this);
+		var j = $('.vtitle').index(_self);
+		if( tabs_i == j ) return false; tabs_i = j;
+		$('.vtitle em').each(function(e){
+			if(e==tabs_i){
+				$('em',_self).removeClass('v01').addClass('v02');
+			}else{
+				$(this).removeClass('v02').addClass('v01');
+			}
+		});
+		$('.vcon').slideUp().eq(tabs_i).slideDown();
+	});
+})
+</script>
+ <!-- 鼠标效果jQ -->
+<script type="text/javascript">
+	$(function(){
+			$('.contentLcon ul li').mouseover(function(){
+				$(this).addClass('hover');
+				});
+			$('.contentLcon ul li').mouseout(function(){
+				$(this).removeClass('hover');
+				});
+		});
+</script>
+
+
+<!--轮播图1-->
+<script type="text/javascript">
+var num1,h=0,wid1
+function autoplay1() {
+    h++
+    if(h>=num1) h = 0
+    $($(".logfocus1 .num_dd1 li")[h]).addClass("current1")
+    $($(".logfocus1 .num_dd1 li")[h]).siblings().removeClass("current1")
+    $($(".logfocus1 .sArea1 li")[h]).siblings().hide()
+    $($(".logfocus1 .sArea1 li")[h]).fadeTo(500,1)
+}
+$(function(){
+   num1 = $(".logfocus1 .sArea1 img").size()
+   $(".logfocus1 .num_dd1 li:first").addClass("current1")
+   $(".logfocus1 .sArea1 li:first").fadeTo(300,1)
+   $(".logfocus1 .num_dd1 li").hover(
+      function(){
+          window.clearInterval(wid1)
+          $(this).addClass("current1")
+          $(this).siblings().removeClass("current1")
+          h =  $(this).index()
+          $($(".logfocus1 .sArea1 li")[h]).siblings().hide()
+          $($(".logfocus1 .sArea1 li")[h]).fadeTo(500,1)
+       },
+       function(){wid1 = window.setInterval("autoplay1()",3000)}
+      )
+   wid1 = window.setInterval("autoplay1()",3000)
+})
+  </script> 
+
+</body>
+</html>

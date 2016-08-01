@@ -1,0 +1,40 @@
+<!-- 底部代码 -->
+
+<!--在线咨询钩子调用-->
+{:hook('consultation1')}
+
+<link href="__TMPL__Public/css/common_aojia.css" rel="stylesheet" type="text/css">
+
+<div id="footer">
+  <!-- 友情链接 -->
+  <div class="friend_link">
+  <div class="wrap_center">
+      <div class="center">
+            <h2><span class="red">友情</span>链接</h2>
+      </div>
+    </div>
+    <div class="con_link">
+      <ul>
+          <php>$links=sp_getlinks();</php>
+      <foreach name="links" item="vo">
+          <li><a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a></li>
+      </foreach>  
+        </ul>
+    </div>
+  </div>
+
+<div id="foot">
+    <div class="top2">
+    <h3>{$site_name}</h3>
+  </div>
+    <div class="under_con">
+      <p>地址:广东省广州市增城华立科技园华立路1号</p>
+      <p>广州市越秀区中山一路57号南方铁道大厦十五层1501-1502室 </p>
+    <p>咨询电话：020-82905849   020-37634589</p>
+    <!-- 备案信息 -->
+    <p>{$site_icp}</p>
+    <!-- 版权信息、统计代码 -->
+    <p>{$site_copyright} {$site_tongji}   </p>
+    </div>
+    </div>
+</div>

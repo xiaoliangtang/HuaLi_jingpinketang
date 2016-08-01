@@ -1,0 +1,272 @@
+<tc_include file=":function" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.immi.cn/activity/20151009/547.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="”renderer”content=”webkit|ie-comp|ie-stand”">
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
+
+  <title>{$post_title} {$site_name}</title>
+  <meta name="keywords" content="{$post_keywords}">
+  <meta name="description" content="{$post_excerpt}">
+  <link rel="stylesheet" href="__TMPL__Public/css/show_ajbaili_usa.css" type="text/css" <base="" target="_blank"> 
+  <!--阻止IE下报错JS-->
+  <script src="__TMPL__Public/js/hm.js"></script>
+  <script charset="utf-8" src="__TMPL__Public/js/b.js"></script>
+  <!--<script charset="utf-8" src="__TMPL__Public/js/lxb.js"></script>-->
+  <script>window.onerror=function(){return true;}</script>
+  <link rel="stylesheet" href="__TMPL__Public/css/1001.css" type="text/css" charset="utf-8">
+  <script type="text/javascript" charset="utf-8" src="__TMPL__Public/js/bpa.js"></script>
+  <script src="__TMPL__Public/js/logger.js"></script>
+  <link href="__TMPL__Public/css/bdsstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!--分享代码-->
+
+
+<!--头部开始-->
+<tc_include file="Public:head" />
+<!--头部结束-->
+   
+<div class="wrap">
+	<!--主体开始-->
+<div class="container">
+		<!--广告条-->
+	
+<div class="wrap" style="margin-top: 40px;">
+<div class="container">	
+  <div class="contentbox">
+       <!--左边开始-->
+    	<div class="sideLeft">
+          <!--面包屑导航-->
+        	<div id="CL_top">
+        		  <div class="lan">
+                <php>$pid = _sp_get_pid($_GET['id']);_sp_get_path($pid,$post_title);</php>  
+              </div>         
+          </div>
+       <!--主体内容-->
+          <div class="main">
+             <h1 id="CLM_one">{$post_title|msubstr=0,25}</h1>
+             <div id="CLM_two">
+             <span style="float:left">
+             <if condition="!empty($post_source)">
+                信息来源：{$post_source}
+             </if>
+             &nbsp;&nbsp;发布时间:{$post_date}</span>
+             </div>
+
+          <if condition="!empty($post_excerpt)">
+          <div id="CLM_three">
+            <div id="CLMT_A">           
+                  <span class="lilit">摘 要：</span>
+                  <p>{$post_excerpt}</p>
+            </div>
+          </div>
+          </if>
+
+          <if condition="!empty($post_keywords)">
+          <div id="CLM_three1">
+            <div id="CLMT_A1">
+              <span class="lilit">关键字：</span>
+              <p>{$post_keywords}</p>
+            </div>
+          </div>
+          </if>
+
+          <div class="center_main">
+            {$post_content}
+          </div>
+          
+
+<!--分享开始-->
+          <div class="text-c" id="pages"></div>
+          {:hook('share')}
+             
+          <div style="margin-top:-20px">
+            <div class="text-c" id="pages"></div>
+            <div id="CLMF_left">
+              <if condition="!empty($prev)">
+              上一篇：<a href="{:U('article/index',array('id'=>$prev['tid']))}">{$prev['post_title']}</a>
+              </if>
+            </div>       
+           
+            <div id="CLMF_right">
+              <if condition="!empty($next)">
+              下一篇：<a href="{:U('article/index',array('id'=>$next['tid']))}">{$next['post_title']}</a>
+              </if>
+            </div>         
+          </div>
+
+          <!--资讯评估-->
+          <div class="btonbox">
+              <foreach name="zpnavs" item="vo">
+                <div class="bton"><a href="{$vo.href}">{$vo.label}</a></div>
+              </foreach>
+          </div>
+
+          <!--置顶资讯-->
+          <php>
+            $listss = sp_sql_posts_paged("cid:$activitymenuid,$newsid;where:istop=1;order:post_date DESC",6);
+          </php>
+          <if condition="!empty($listss['posts'])">
+            <div class="other">
+            	<div class="other_main">
+
+                	<div class="other_tit">
+                    <h2>置顶资讯</h2>
+                  </div>
+                  <ul class="lisclass">
+                    <!--文章列表页-->
+                    <volist name="listss['posts']" id="vo">
+                        <php>
+                        $smeta=json_decode($vo['smeta'], true);
+                        </php>
+                        <li>
+                           <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}" target="_blank">{$vo.post_title}</a>
+                        </li>
+                    </volist>
+                </ul>
+              </div>
+            </div>
+          </if>
+
+
+    </div>
+
+</div>
+            <!--左边结束-->
+		<div class="sideRight">
+            <!--内容页轮播图-->
+      <div class="logfocus1">
+          <div class="sArea1">
+            <!-- $theme_config['model1_slide']实现动态修改幻灯片的标识 -->
+            <php>
+              $article_slides=sp_getslide($theme_config['model7_slide']);
+            </php>
+            <ul>
+            <foreach name="article_slides" item="vo">
+              <li>
+                <if condition="!empty($vo['slide_url'])">
+                  <a href="{$vo.slide_url}">
+                  <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" width="304" height="206" title="{$vo.slide_name}" alt="{$vo.slide_name}">
+                  </a>
+                <else />
+                  <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" width="304" height="206" title="{$vo.slide_name}" alt="{$vo.slide_name}">
+                </if>
+              </li>
+            </foreach>
+            </ul>
+          </div>
+          <ul class="num_dd1">
+            <foreach name="article_slides" item="vo">
+              <li class=""></li>
+            </foreach>
+          </ul>    
+      </div>    
+    <!--轮播图 end-->
+      <!--推荐资讯--> 
+      <php>
+        $listss = sp_sql_posts_paged("cid:$activitymenuid,$newsid;where:recommended=1;order:post_date DESC",8);
+      </php>
+      <if condition="!empty($listss['posts'])"> 
+        <div class="anli">
+          <h2><span class="red">推荐</span>资讯</h2>
+          <div class="layout1_down">
+          <!--文章列表页-->
+              <ul class="ai">
+              <volist name="listss['posts']" id="vo">
+                <php>
+                $smeta=json_decode($vo['smeta'], true);
+                </php>
+                  <li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}">{$vo.post_title}</a></li>
+              </volist>
+              </ul>
+          </div>
+          </div>
+        </if>
+
+			<!--最新资讯--> 
+      <php>
+        $listss = sp_sql_posts_paged("cid:$activitymenuid,$newsid;order:post_date DESC;",8);
+      </php>
+      <if condition="!empty($listss['posts'])">  
+        <div class="anli">
+    			<h2><span class="red">最新</span>资讯</h2>
+    			<div class="layout1_down">
+              <ul class="ai">
+                  <volist name="listss['posts']" id="vo">
+                    <php>
+                    $smeta=json_decode($vo['smeta'], true);
+                    </php>
+                 	<li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}" alt="{$vo.post_title}">{$vo.post_title}</a></li>
+                  </volist>
+              </ul>
+          </div>
+  			</div>
+      </if>
+		
+       <!--微信平台-->  
+        {:hook('weixin')}
+
+
+			 <!--移民微博-->  
+        {:hook('weibo')}
+ 
+
+      </div>
+		</div>
+  </div>
+</div>
+</div>
+</div>
+  
+<!--第一板块结束-->
+<!--轮播图1-->
+
+<script type="text/javascript">
+var num1,h=0,wid1
+function autoplay1() {
+    h++
+    if(h>=num1) h = 0
+    $($(".logfocus1 .num_dd1 li")[h]).addClass("current1")
+    $($(".logfocus1 .num_dd1 li")[h]).siblings().removeClass("current1")
+    $($(".logfocus1 .sArea1 li")[h]).siblings().hide()
+    $($(".logfocus1 .sArea1 li")[h]).fadeTo(500,1)
+}
+$(function(){
+   num1 = $(".logfocus1 .sArea1 img").size()
+   $(".logfocus1 .num_dd1 li:first").addClass("current1")
+   $(".logfocus1 .sArea1 li:first").fadeTo(300,1)
+   $(".logfocus1 .num_dd1 li").hover(
+      function(){
+          window.clearInterval(wid1)
+          $(this).addClass("current1")
+          $(this).siblings().removeClass("current1")
+          h =  $(this).index()
+          $($(".logfocus1 .sArea1 li")[h]).siblings().hide()
+          $($(".logfocus1 .sArea1 li")[h]).fadeTo(500,1)
+       },
+       function(){wid1 = window.setInterval("autoplay1()",3000)}
+      )
+   wid1 = window.setInterval("autoplay1()",3000)
+})
+  </script> 
+  <!--选项卡-->
+ <script type="text/javascript">
+$('.tab_box').each(function(i,v){
+    var $v = $(v).find('.tab_tit');
+    
+    $v.mouseenter(function() {
+       $(this).addClass('active').siblings('.tab_tit').removeClass('active').removeClass('on');
+       $(v).find('.tab_con').hide().eq($(this).index()).stop().fadeIn(600);
+    });
+});
+</script>
+<!--底部文件 开始-->
+<tc_include file="Public:footer" />
+
+</body>
+</html>
